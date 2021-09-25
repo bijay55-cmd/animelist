@@ -29,24 +29,50 @@ function showMovies(data){
 
 
         var card = `
-        
-        
+
+
         <div class="card">
 
-
+        <div>
         <img class="img" src="${movie.image_url}">
-<p>${movie.title}</p>
+        </div>
 
-<div class="score">
+        <div>
+        <p>${movie.title}</p>
+        </div>
+        
+        
+        <div class="score">
+        <p>Rating</p>
+        <p class="${getColor(movie.score)}">${movie.score}</p>
+        </div>
 
-<p>Rating</p>
-<p class="${getColor(movie.score)}">${movie.score}</p>
+        <div class="info">
+        <button>close</button>
 
-</div>
+        <div>
+        <img class="infoimg" src="${movie.image_url}">
+        <p>${movie.type}</p>
+        </div>
+        
+        
+        <div class="dates">
+        <p> Start Date: ${date(movie.start_date)}</p>
+        <p>End Date: ${date(movie.end_date)}</p>
+        </div>
+        
+        <div>
 
-<div class="info">${movie.synopsis}</div>
+        <p>Episodes ${movie.episodes}</p>
+        <p>${movie.synopsis}</p>
 
-</div>
+        </div>
+        
+        </div>
+        
+
+        </div>
+        
 
         `
       
@@ -56,23 +82,47 @@ function showMovies(data){
         //info slide will pop up when user clicks on the card image
         const animecard = document.querySelectorAll('.card');
 
-        animecard.forEach(function (question){
-        const btn = question.querySelector('.img');
+        animecard.forEach(function (animebtn){
+        const btn = animebtn.querySelector('.img');
+
+        const btn2 = animebtn.querySelector('button');
+
+        
         
         
         btn.addEventListener('click', function(){
-        
+            
+            
         animecard.forEach(function(item){
-        if(item !== question){
+        if(item !== animebtn){
             item.querySelector('.info').classList.remove('show');
         }
+    })
+    animebtn.querySelector('.info').classList.toggle('show');
+    
+
+        })
+
+        btn2.addEventListener('click', function(){
         
-        })
-            question.querySelector('.info').classList.toggle('show');
-        })
+            animecard.forEach(function(item){
+            if(item !== animebtn){
+                item.querySelector('.info').classList.remove('show');
+            }
+            
+            })
+            animebtn.querySelector('.info').classList.toggle('show');
+            })
+    
+
+
         })
     })
 
+}
+
+function date(date){
+    return date.substring(0,10);
 }
 
 //each rating is shown in different color based on popularity
@@ -81,10 +131,10 @@ function getColor(score){
         return 'green'
     }
     else if(score <=5 ){
-        return 'orange'
+        return 'red'
     }
     else{
-        return 'red';
+        return 'orange';
     }
 }
 
