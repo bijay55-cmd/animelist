@@ -80,7 +80,7 @@ input{
     height:300px;
 }
 
-.info button{
+.closebtn{
     position: absolute;
     top:0;
     right:0;
@@ -97,6 +97,19 @@ input{
 }
 .dates p{
     margin:0 5px;
+}
+#tags{
+    display:flex;
+    justify-content:center;
+}
+.tag{
+    margin:0 5px;
+    background:salmon;
+    padding:10px;
+    margin:10px;
+}
+.tag.highlight{
+    background:green;
 }
 @media screen and (min-width:720px){
 #result{
@@ -131,4 +144,6 @@ grid-template-columns: auto auto auto;
         grid-template-columns: auto auto auto auto auto;
     }
     }
+    
+
     
