@@ -122,7 +122,9 @@ function showMovies(data){
 }
 
 function date(date){
-    return date.substring(0,10);
+      if(date !== null){
+        return date.substring(0,10);
+    }
 }
 
 //each rating is shown in different color based on popularity
