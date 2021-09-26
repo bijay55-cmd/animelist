@@ -191,6 +191,12 @@ input.addEventListener('change', (e) => {
     }else{
         document.body.style.background="darkcyan";
         getMovies(view)
+        
+          const tags = document.querySelectorAll('.tag');
+
+        tags.forEach(tag => {
+            tag.classList.remove('highlight');
+        })
     }
 
 })
@@ -205,7 +211,7 @@ tagsEl.innerHTML = '';
 
 genres.forEach(genre => {
 
-    const t = document.createElement('div');
+    const t = document.createElement('button');
 
 t.classList.add('tag');
 
