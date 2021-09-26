@@ -12,12 +12,12 @@ input{
     border:none;
     padding:10px;
 }
-img{
+.img{
     cursor: pointer;
     height:250px;
     width:100%;
 }
-img:hover{
+.img:hover{
  filter: brightness(50%);
 }
 #result{
