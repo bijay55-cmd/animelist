@@ -248,6 +248,7 @@ t.addEventListener('click', () => {
         }
         
     }
+       getMovies(genreapi+selectedGenre.join(',')
     highlightselect();
 })
 tagsEl.append(t);
