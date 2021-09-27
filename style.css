@@ -106,8 +106,6 @@ input{
     background:lightblue;
     padding:5px;
     width:100%;
-    border-right:2px solid rgba(0,0,0,0.5);
-    border-left:2px solid rgba(0,0,0,0.5);
 }
 .tag.highlight{
     background:green;
