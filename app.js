@@ -46,6 +46,7 @@ function getMovies(url){
         if(data.results !== undefined){
         showMovies(data.results);
         document.querySelector('.nofound').style.display="none";
+            console.clear();
     }
    else if(data.results == undefined){
        document.querySelector('.nofound').style.display="block";
