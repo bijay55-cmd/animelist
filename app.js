@@ -52,7 +52,7 @@ function showMovies(data){
     data.forEach(movie => {
 
 
-        var card = `
+      var card = `
 
 
         <div class="card">
@@ -76,18 +76,23 @@ function showMovies(data){
 
         <div>
         <img class="infoimg" src="${movie.image_url}">
+        <br>
         <p>${movie.type}</p>
         </div>
         
+        <br>
         
         <div class="dates">
         <p>Start Date:${moviedate(movie.start_date)}</p>
         <p>End Date:${moviedate(movie.end_date)}</p>
         </div>
+
+        <br>
         
         <div>
 
         <p>Episodes ${movie.episodes}</p>
+        <br>
         <p>${movie.synopsis}</p>
 
         </div>
