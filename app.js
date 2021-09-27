@@ -29,7 +29,7 @@ const genres = [
         'id':8,
         'name':'Drama'
     },
-     {
+    {
         'id':43,
         'name':'Josei'
     },
@@ -42,22 +42,17 @@ const genres = [
 
 function getMovies(url){
     
-  fetch(url).then(res => res.json()).then(data => {
+    fetch(url).then(res => res.json()).then(data => {
         if(data.results !== undefined){
         showMovies(data.results);
-        document.querySelector('.nofound').style.display="none";
-       
     }
    else if(data.results == undefined){
-       document.querySelector('.nofound').style.display="block";
        showMovies()
    }
     })
 
 }
-
 getMovies(view);
-
 
 
 //creating each card by calling the title from api 
@@ -68,7 +63,7 @@ function showMovies(data){
     data.forEach(movie => {
 
 
-      var card = `
+        var card = `
 
 
         <div class="card">
@@ -188,11 +183,11 @@ function getColor(score){
         return 'orange';
     }
 }
-
+var form = document.getElementById('form');
 //input search bar were user can search thier specific anime based on title
-input.addEventListener('change', () => {
+form.addEventListener('submit', (e) => {
 
-   
+    e.preventDefault();
 
     const searchTerm = input.value;
     selectedGenre=[];
@@ -208,16 +203,21 @@ input.addEventListener('change', () => {
         tags.forEach(tag => {
             tag.classList.remove('highlight');
         })
+
+        console.clear()
      
     }else{
         document.body.style.background="darkcyan";
         getMovies(view)
-        
-          const tags = document.querySelectorAll('.tag');
+
+        const tags = document.querySelectorAll('.tag');
 
         tags.forEach(tag => {
             tag.classList.remove('highlight');
         })
+
+        console.clear()
+     
     }
 
 })
@@ -256,7 +256,6 @@ t.addEventListener('click', () => {
         }
         
     }
-       
     highlightselect();
 })
 tagsEl.append(t);
@@ -272,6 +271,7 @@ function highlightselect(){
 
    tags.forEach(tag => {
        tag.classList.remove('highlight');
+       console.clear();
    })
 
     if(selectedGenre.length !=0){
@@ -282,4 +282,5 @@ function highlightselect(){
     })
 }
 }
+
 
