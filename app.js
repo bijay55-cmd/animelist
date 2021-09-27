@@ -216,7 +216,7 @@ form.addEventListener('submit', (e) => {
             tag.classList.remove('highlight');
         })
 
-        console.clear()
+       console.clear()
      
     }
 
