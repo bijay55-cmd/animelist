@@ -182,9 +182,9 @@ function getColor(score){
 }
 
 //input search bar were user can search thier specific anime based on title
-input.addEventListener('change', (e) => {
+input.addEventListener('change', () => {
 
-    e.preventDefault();
+   
 
     const searchTerm = input.value;
     selectedGenre=[];
