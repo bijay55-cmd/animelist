@@ -29,6 +29,14 @@ const genres = [
         'id':8,
         'name':'Drama'
     },
+     {
+        'id':43,
+        'name':'Josei'
+    },
+    {
+        'id':30,
+        'name':'Sports'
+    },
 ]
 
 
