@@ -42,8 +42,15 @@ const genres = [
 
 function getMovies(url){
     
-    fetch(url).then(res => res.json()).then(data => {
+  fetch(url).then(res => res.json()).then(data => {
+        if(data.results !== undefined){
         showMovies(data.results);
+        document.querySelector('.nofound').style.display="none";
+    }
+   else if(data.results == undefined){
+       document.querySelector('.nofound').style.display="block";
+       showMovies()
+   }
     })
 
 }
