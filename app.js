@@ -49,7 +49,8 @@ function getMovies(url){
     }
    else if(data.results == undefined){
        return resultshow.innerHTML = `<h1>No result Found</h1>`
-   }
+  showMovies();
+ }
     })
 
 }
