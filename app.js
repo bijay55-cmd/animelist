@@ -168,6 +168,8 @@ function showMovies(data){
 function moviedate(date){
     if(date !== null){
         return date.substring(0,10);
+    }else{
+    return 'Unknown'
     }
 }
 
