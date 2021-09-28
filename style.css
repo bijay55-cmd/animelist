@@ -113,9 +113,6 @@ input{
 .tag.highlight{
     background:green;
 }
-.nofound{
-text-align:center;
-}
 @media screen and (min-width:720px){
 #result{
 grid-template-columns: auto auto auto;
