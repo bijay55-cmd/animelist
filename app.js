@@ -1,4 +1,4 @@
-var result = document.getElementById('result'); 
+var resultshow = document.getElementById('resultshow'); 
 var input = document.getElementById('input');
 
 //calling and grabbing the api from the site
@@ -39,6 +39,7 @@ const genres = [
     },
 ]
 
+var result = document.getElementById('result')
 
 function getMovies(url){
     
@@ -47,7 +48,7 @@ function getMovies(url){
         showMovies(data.results);
     }
    else if(data.results == undefined){
-       showMovies()
+       return result.innerHTML = `<h1>No result Found</h1>`
    }
     })
 
@@ -58,7 +59,7 @@ getMovies(view);
 //creating each card by calling the title from api 
 function showMovies(data){
 
-    result.innerHTML = "";
+    resultshow.innerHTML = "";
 
     data.forEach(movie => {
 
@@ -120,7 +121,7 @@ function showMovies(data){
 
         `
       
-        result.innerHTML += (card);
+        resultshow.innerHTML += (card);
         
         
         //info slide will pop up when user clicks on the card image
