@@ -20,7 +20,7 @@ input{
 .img:hover{
  filter: brightness(50%);
 }
-#result{
+#resultshow{
     display:grid;
     grid-template-columns: auto;
     padding:10px;
@@ -28,7 +28,7 @@ input{
     margin:10px 0;
     text-align:center;
 }
-#result > div{
+#resultshow > div{
     position: relative;
     padding:10px;
     overflow: hidden;
@@ -113,9 +113,11 @@ input{
 .tag.highlight{
     background:green;
 }
-
+.nofound{
+text-align:center;
+}
 @media screen and (min-width:720px){
-#result{
+#resultshow{
 grid-template-columns: auto auto auto;
 }
 .info{
@@ -127,7 +129,7 @@ grid-template-columns: auto auto auto;
 }
 }
 @media screen and (min-width:1020px){
-    #result{
+    #resultshow{
         grid-template-columns: auto auto auto auto;
     }
     .infoimg{
@@ -143,7 +145,7 @@ grid-template-columns: auto auto auto;
         height:300px;
     }
     
-    #result{
+    #resultshow{
         grid-template-columns: auto auto auto auto auto;
     }
     }
