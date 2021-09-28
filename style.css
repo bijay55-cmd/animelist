@@ -124,7 +124,10 @@ grid-template-columns: auto auto auto;
     width:50%;
     height:300px;
 }
-   
+   .nofound{
+    position: relative;
+    left:50%;
+}
 }
 @media screen and (min-width:1020px){
     #result{
@@ -133,7 +136,10 @@ grid-template-columns: auto auto auto;
     .infoimg{
         height:300px;
     }
-
+   .nofound{
+        position: relative;
+        left:80%;
+    }
 }
 @media screen and (min-width:1440px){
     img{
@@ -143,7 +149,10 @@ grid-template-columns: auto auto auto;
         width:300px;
         height:300px;
     }
-    
+     .nofound{
+        position: relative;
+        left:110%;
+    }
     #result{
         grid-template-columns: auto auto auto auto auto;
     }
