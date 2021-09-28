@@ -39,7 +39,7 @@ const genres = [
     },
 ]
 
-var result = document.getElementById('result')
+
 
 function getMovies(url){
     
@@ -47,8 +47,9 @@ function getMovies(url){
         if(data.results !== undefined){
         showMovies(data.results);
     }
-   else if(data.results == undefined){
-  showMovies();
+   else{
+return resultshow.innerHTML = `<h1>No result found</h1>`
+  }
  }
     })
 
