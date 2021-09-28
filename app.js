@@ -47,7 +47,6 @@ function getMovies(url){
         showMovies(data.results);
     }
    else{
-   result.innerHTML = `<h1 class="nofound">No result Found</h1>`
 showMovies();
 }
     })
