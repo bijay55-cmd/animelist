@@ -47,10 +47,9 @@ function getMovies(url){
         if(data.results !== undefined){
         showMovies(data.results);
     }
-   else{
-return resultshow.innerHTML = `<h1>No result found</h1>`
-  }
- }
+   else if(data.results == undefined){
+    return result.innerHTML = `<h1>No result Found</h1>`
+    }
     })
 
 }
