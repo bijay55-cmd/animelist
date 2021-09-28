@@ -1,4 +1,4 @@
-var resultshow= document.getElementById('result'); 
+var result = document.getElementById('result'); 
 var input = document.getElementById('input');
 
 //calling and grabbing the api from the site
@@ -40,7 +40,6 @@ const genres = [
 ]
 
 
-
 function getMovies(url){
     
     fetch(url).then(res => res.json()).then(data => {
@@ -48,7 +47,7 @@ function getMovies(url){
         showMovies(data.results);
     }
    else if(data.results == undefined){
-    return resultshow.innerHTML = `<h1>No result Found</h1>`
+    return result.innerHTML = `<h1 class="nofound">No result Found</h1>`
     }
     })
 
@@ -59,14 +58,13 @@ getMovies(view);
 //creating each card by calling the title from api 
 function showMovies(data){
 
-    resultshow.innerHTML = "";
+    result.innerHTML = "";
 
     data.forEach(movie => {
 
+       var card= `
 
-        var card = `
-
-
+       
         <div class="card">
 
         <div>
@@ -86,7 +84,8 @@ function showMovies(data){
         <div class="info">
         <button class="closebtn">close</button>
 
-<div>
+        <div>
+
         <div>
         <img class="infoimg" src="${movie.image_url}">
         <br>
@@ -112,16 +111,17 @@ function showMovies(data){
 
         
         </div>
-        
+
         </div>
         
 
         </div>
+
         
 
         `
       
-        resultshow.innerHTML += (card);
+        result.innerHTML += (card);
         
         
         //info slide will pop up when user clicks on the card image
@@ -173,7 +173,7 @@ function moviedate(date){
     if(date !== null){
         return date.substring(0,10);
     }else{
-    return 'Unknown'
+        return 'Unknown';
     }
 }
 
@@ -288,4 +288,5 @@ function highlightselect(){
     })
 }
 }
+
 
