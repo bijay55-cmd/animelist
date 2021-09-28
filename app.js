@@ -85,6 +85,7 @@ function showMovies(data){
         <div class="info">
         <button class="closebtn">close</button>
 
+<div>
         <div>
         <img class="infoimg" src="${movie.image_url}">
         <br>
@@ -108,6 +109,8 @@ function showMovies(data){
 
         </div>
 
+        
+        </div>
         
         </div>
         
