@@ -1,4 +1,4 @@
-var resultshow = document.getElementById('resultshow'); 
+var resultshow= document.getElementById('result'); 
 var input = document.getElementById('input');
 
 //calling and grabbing the api from the site
@@ -47,8 +47,8 @@ function getMovies(url){
         if(data.results !== undefined){
         showMovies(data.results);
     }
-   else if(data.results == undefined){
-       return result.innerHTML = `<h1>No result Found</h1>`
+   else{
+       return resultshow.innerHTML = `<h1>No result Found</h1>`
    }
     })
 
