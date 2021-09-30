@@ -12,7 +12,7 @@ loginmenu.addEventListener('click', () => {
 
 
 //list of animes are shown in the container from the api
-const api = 'https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1';
+const api = 'https://api.jikan.moe/v3/search/manga?q=&order_by=members&sort=desc&page=1';
 
 function getMovies(url){
     
