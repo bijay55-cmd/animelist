@@ -111,11 +111,9 @@ function showMovies(data){
         
         <div>
 
-         <p>Chapters: ${movie.chapters}</p>
-        <p>Volumes: ${movie.volumes}</p>
+    <p>Episodes: ${movie.episodes}</p>
         <br>
         <p>${movie.synopsis}</p>
-
 
         </div>
 
