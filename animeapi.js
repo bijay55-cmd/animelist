@@ -12,11 +12,11 @@ menuappear.addEventListener('click', () => {
 //calling and grabbing the api from the site
 const api = 'https://api.jikan.moe/v3';
 
-const view = api + '/search/manga?q=Boruto';
+const view = api + '/search/anime?q=&order_by=members&sort=desc&page=1';
 
-var searchurl = api + '/search/manga?q=';
+var searchurl = api + '/search/anime?q=';
 
-var genrecode = '/search/manga?q=&genre=';
+var genrecode = '/search/anime?q=&genre=';
 
 var genreapi = api + genrecode;
 
