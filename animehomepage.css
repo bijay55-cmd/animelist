@@ -1,0 +1,254 @@
+*{
+    box-sizing: border-box;
+}
+html body{
+    background:burlywood;
+}
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:10px;
+    font-size: 15px;
+    position: relative;
+}
+main{
+    height: 80vh;
+}
+
+header{
+    font-size: 20px;
+    font-weight: bold;
+    color:orange;
+}
+.nav-item{
+    background:darkcyan;
+    border:4px solid white;
+    margin:0 10px;
+}
+.backgroundimages{
+   display:flex;
+   position: absolute;
+   z-index:-100;
+   top:0;
+   left:0;
+   right:0;
+   overflow: hidden;
+}
+.backgroundimages img{
+    width:50vw;
+    height:80vh;
+    filter: brightness(50%);
+}
+a{
+    color: white !important;
+}
+.navlink{
+    display:none !important;
+}
+.navlink.show{
+display:block !important;
+    position: absolute;
+    top:100px;
+    right:0;
+    left:0;
+    bottom:0;
+    text-align:center;
+}
+.menubaricon{
+    width:20px;
+    height:20px;
+}
+.centerintro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.animecollection{
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:30vh;
+    color:white;
+}
+.animecollection button{
+    border:4px solid white;
+    background:darkcyan;
+    color:white;
+    font-size: 20px;
+}
+.col{
+    text-align:center;
+    color:white;
+}
+.col img{
+    width:50px;
+    height:50px;
+}
+i{
+    font-size: 20px !important;
+    color:white !important;
+}
+.secondpage{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.secondpage img{
+    width:100%;
+    height:100%;
+}
+.secondpage h2{
+    margin:50px auto !important;
+}
+.animelist{
+    text-align: center;
+    padding:50px 0;
+}
+.animeshow{
+    display:flex;
+    margin:50px auto;
+   overflow: hidden;
+}
+.animeshow img{
+    width:30vw;
+    height:30vh;
+    margin:5px;
+    position: relative;
+    left:-20px;
+    animation:scrollinfinite 200s linear infinite;
+}
+.accordion-button{
+    background:burlywood !important;
+}
+@keyframes scrollinfinite{
+    0%{
+        transform:translateX(0)
+    }
+    100%{
+        transform:translateX(calc(-250px * 20));
+    }
+}
+.accordionpage{
+    text-align: center;
+    margin:50px 0;
+}
+.accordion-body{
+    text-align: left ;
+}
+.displayflex{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    font-size: 15px;
+    margin:20px;
+    position: relative;
+    right:10px;
+    justify-content: center;
+}
+.displayflex h2{
+    font-size: 15px;
+    font-weight: bold;
+}
+.displayflex ul{
+    list-style: none;
+}
+.questions{
+    text-align: center;
+    padding:20px 0;
+}
+.loginform{
+    display:none;
+}
+.accountform{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display:flex;
+    height:100vh;
+}
+input{
+    border:none;
+    padding:10px;
+}
+.Signup{
+    display:none;
+}
+a{
+    text-decoration: none !important;
+}
+.social{
+    display: flex;
+    justify-content: center;
+}
+.social i{
+    margin:20px 10px;
+}
+@media screen and (min-width:720px){
+    img{
+        width:50vw;
+        height:100vh;
+    }
+    .navlink{
+        display:flex !important;
+    }
+    .menubar{
+        display:none;
+    }
+    .animecollection{
+        height:50vh;
+    }
+   main{
+       height:100vh;
+   }
+    .backgroundimages img{
+        height:100vh;
+    }
+    .displayflex{
+        font-size: 20px;
+        justify-content:space-between;
+    }
+    .displayflex h2{
+        font-size: 20px;
+    }
+}
+@media screen and (min-width:1020px){
+    img{
+        width:100%;
+        height:50vh;
+    }
+    header{
+        font-size: 30px;
+    }
+    .row{
+        display:grid !important;
+        grid-template-columns: auto auto auto auto !important;
+        justify-content: center;
+        grid-gap:100px !important;
+    }
+    .col{
+        width:100% !important;
+    }
+    .backgroundimages img{
+        width:40vw;
+    }
+}
+@media screen and (min-width:1440px){
+    img{
+        height:100vh;
+    }
+    .animecollection{
+        height:50vh;
+    }
+    i{
+        font-size: 50px !important;
+    }
+    .backgroundimages img{
+        width:100%;
+    }
+}
