@@ -97,6 +97,8 @@ function showMovies(data){
         <div>
         <img class="infoimg" src="${movie.image_url}">
         <br>
+        <h2>${movie.title}</h2>
+        <br>
         <p>${movie.type}</p>
         </div>
         
