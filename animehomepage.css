@@ -122,6 +122,9 @@ i{
     text-align: center;
     padding:50px 0;
 }
+.animelist h2{
+margin: auto 20px !important;
+}
 .animeshow{
     display:flex;
     margin:50px auto;
