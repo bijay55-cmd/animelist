@@ -4,6 +4,13 @@ menuappear.addEventListener('click', () => {
     document.querySelector('.navlink').classList.toggle('show');
 })
 
+var loginmenu = document.querySelector('.menubar2');
+
+loginmenu.addEventListener('click', () => {
+    document.querySelector('.navlink2').classList.toggle('show');
+})
+
+
 //list of animes are shown in the container from the api
 const api = 'https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1';
 
