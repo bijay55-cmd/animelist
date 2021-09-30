@@ -69,7 +69,13 @@ input{
     opacity:0;
     transition:1s all;
     z-index:100;
+    overflow:auto;
+    scroll-behavior: smooth;
+    scrollbar-width:none;
 }
+.info::-webkit-scrollbar {
+    display: none;
+  }
 .info > div{
     margin:20px auto;
 }
