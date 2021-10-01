@@ -116,6 +116,8 @@ function showMovies(data){
     <p>Episodes: ${movie.episodes}</p>
         <br>
         <p>${movie.synopsis}</p>
+        
+        <a href="${movie.url}"><button class="btn btn-primary">More Info</button></a>
 
         </div>
 
