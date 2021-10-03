@@ -136,7 +136,7 @@ function showMovies(data){
         result.innerHTML += (card);
         
         
-        //info slide will pop up when user clicks on the card image
+           //info slide will pop up when user clicks on the card image
         const animecard = document.querySelectorAll('.card');
         
         animecard.forEach(function (animebtn){
@@ -149,31 +149,18 @@ function showMovies(data){
             
             btn.addEventListener('click', function(){
                 
-                
-                animecard.forEach(function(item){
-                    if(item !== animebtn){
-                        item.querySelector('.info').classList.remove('show');
-                    }
-                })
-                animebtn.querySelector('.info').classList.toggle('show');
+               animebtn.querySelector('.info').classList.toggle('show');
                 
                 
             })
             
             btn2.addEventListener('click', function(){
                 
-                animecard.forEach(function(item){
-                    if(item !== animebtn){
-                        item.querySelector('.info').classList.remove('show');
-            }
+                animebtn.querySelector('.info').classList.remove('show');
             
         })
-        animebtn.querySelector('.info').classList.toggle('show');
+
             })
-            
-            
-            
-        })
         
     })
     
