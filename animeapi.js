@@ -73,6 +73,10 @@ var card = `
 
 <br>
 
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/${movie.trailer.youtube_id}">
+</iframe> 
+
 
 <div>
 
@@ -126,7 +130,7 @@ btn2.addEventListener('click', function(){
 
 
 }
-display(apishow);
+
 
 function getColor(score){
     if(score >= 7){
@@ -180,11 +184,11 @@ form.addEventListener('submit', (e) => {
      
     }else{
         document.body.style.background="darkcyan";
-        display(apishow)
+        newanime(animeapi)
            selectedGenre=[];
         
-        document.querySelector('.containerbox').style.display="grid";
-        document.querySelector('.container2').style.display="none";
+        document.querySelector('.containerbox').style.display="none";
+        document.querySelector('.container2').style.display="grid";
 
         const tags = document.querySelectorAll('.tag');
 
@@ -201,6 +205,9 @@ var genrecode = 'https://api.jikan.moe/v3/search/anime?q=&genre=';
 var genre = 'https://api.jikan.moe/v3/search/anime?q=&genre=1';
 
 var container2 = document.querySelector('.container2');
+
+var animeapi = 'https://api.jikan.moe/v3/search/anime?q=&page=1&genre=1,10&order_by=start_date&sort=desc';
+
 
 function newanime(url){
 
@@ -280,6 +287,8 @@ function newanime(url){
     
     
     }
+
+newanime(animeapi);
 
 const tagsEl = document.getElementById('tags')
 
