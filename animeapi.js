@@ -181,6 +181,8 @@ form.addEventListener('submit', (e) => {
     }else{
         document.body.style.background="darkcyan";
         display(apishow)
+           selectedGenre=[];
+        
         document.querySelector('.containerbox').style.display="grid";
         document.querySelector('.container2').style.display="none";
 
