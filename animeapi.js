@@ -337,6 +337,7 @@ function highlightselect(){
         highlightedTag.classList.add('highlight')
         newanime(genrecode+selectedGenre.join(','))
        document.querySelector('.containerbox').style.display="none";
+         document.querySelector('.container2').style.display="grid";
     })
 }
 }
