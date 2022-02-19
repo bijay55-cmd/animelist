@@ -1,0 +1,543 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: burlywood !important;
+  overflow-x: hidden;
+}
+
+.navbar-fixed {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: whitesmoke;
+}
+
+.navbar-fixed .nav-link.active, .navbar-fixed .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: transparent !important;
+}
+
+.centerintro {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100vh;
+  font-size: 20px;
+  color: white;
+}
+
+.centerintro .col {
+  text-align: center;
+  color: white;
+}
+
+.centerintro .col .col img {
+  width: 50px;
+  height: 50px;
+}
+
+.centerintro .col i {
+  font-size: 20px !important;
+  color: white !important;
+}
+
+.centerintro .animecollection {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30vh;
+  color: white;
+}
+
+.centerintro .animecollection button {
+  border: 4px solid white;
+  background: darkcyan;
+  color: white;
+  font-size: 20px;
+}
+
+.backgroundimages {
+  position: absolute;
+  z-index: -100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.backgroundimages img {
+  width: 50vw;
+  height: 100vh;
+  -webkit-filter: brightness(50%);
+          filter: brightness(50%);
+}
+
+.secondpage {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.secondpage img {
+  width: 100%;
+  height: 100%;
+}
+
+.secondpage h2 {
+  margin: 50px 20px !important;
+}
+
+.animelist {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.animelist .animelist h2 {
+  margin: auto 20px !important;
+}
+
+.animelist .animeshow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.animelist .animeshow img {
+  width: 30vw;
+  height: 30vh;
+  margin: 5px;
+  position: relative;
+  left: -20px;
+  -webkit-animation: scrollinfinite 200s linear infinite;
+          animation: scrollinfinite 200s linear infinite;
+}
+
+@-webkit-keyframes scrollinfinite {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 20));
+            transform: translateX(calc(-250px * 20));
+  }
+}
+
+@keyframes scrollinfinite {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(calc(-250px * 20));
+            transform: translateX(calc(-250px * 20));
+  }
+}
+
+.accordionpage {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.accordionpage button {
+  background: burlywood !important;
+}
+
+.accordionpage .accordion-body {
+  text-align: left;
+}
+
+.footerflex {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  font-size: 15px;
+  margin: 20px;
+  position: relative;
+  right: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footerflex h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.footerflex ul {
+  list-style: none;
+}
+
+.questions {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.social i {
+  margin: 20px 10px;
+  color: white;
+  font-size: 30px;
+}
+
+.accountform {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+}
+
+input {
+  border: none;
+  padding: 10px;
+}
+
+.Signup {
+  display: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.pro {
+  border: 4px solid darkslategrey !important;
+}
+
+.lni-crown {
+  font-size: 30px !important;
+  color: orange !important;
+}
+
+.pricing {
+  margin: 100px auto;
+}
+
+.containerbox {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.container2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.animeform {
+  margin-top: 50px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.animecard {
+  padding: 10px;
+  margin: 10px;
+  background: whitesmoke;
+  position: relative;
+  text-align: center;
+}
+
+img {
+  width: 100%;
+  height: 300px;
+}
+
+.info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  bottom: 0;
+  background: lightblue;
+  pointer-events: none;
+  z-index: 500;
+  padding: 50px 20px;
+  text-align: center;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.info::-webkit-scrollbar {
+  display: none;
+}
+
+.info > p {
+  margin: 10px;
+}
+
+.info.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.closebtn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  padding: 10px;
+  background: darkcyan;
+  color: white;
+  text-transform: uppercase;
+}
+
+#tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tag.highlight {
+  background: coral;
+}
+
+.tag {
+  background: deepskyblue;
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 5px 0;
+}
+
+.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10px;
+}
+
+.orange {
+  color: orange;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.date p {
+  margin: 0 10px;
+}
+
+.infoimg {
+  width: 50%;
+  height: 20%;
+}
+
+@media (min-width: 720px) {
+  .pricing {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .containerbox {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+  .container2 {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
+  .info img {
+    height: 500px;
+  }
+  .footerflex {
+    font-size: 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footerflex .h2 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1020px) {
+  .navbar-fixed {
+    position: relative !important;
+    margin: auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    width: 50%;
+    top: 0;
+    background: transparent !important;
+  }
+  .navbar-fixed button {
+    background: darkcyan !important;
+    color: white !important;
+    margin: auto 5px;
+    border: 5px solid white !important;
+  }
+  .navbar-btn {
+    display: block !important;
+    font-size: 20px !important;
+  }
+  .row {
+    display: -ms-grid !important;
+    display: grid !important;
+    -ms-grid-columns: auto auto auto auto !important;
+        grid-template-columns: auto auto auto auto !important;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    grid-gap: 100px !important;
+  }
+  .row .col {
+    width: 100% !important;
+  }
+  .backgroundimages img {
+    width: 40vw;
+  }
+  .pricing {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 100px 50px;
+  }
+  .containerbox {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+  .container2 {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+  .img {
+    height: 400px;
+  }
+  .infoimg {
+    width: 30%;
+    height: 50%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .backgroundimages img {
+    width: 100%;
+  }
+  img {
+    height: 100vh;
+  }
+  .social i {
+    font-size: 30px !important;
+  }
+  #result {
+    -ms-grid-columns: auto auto auto auto auto;
+        grid-template-columns: auto auto auto auto auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */
