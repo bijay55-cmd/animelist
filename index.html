@@ -13,269 +13,376 @@
 </head>
 
 <body>
-<div class="mainpage">
-    <main>
-
-        <div class="main">
-
-    <header>Anime4Fun</header>
-
-
-    <div class="backgroundimages">
-        <img src="./images/attackontitan.jpg">
-        <img src="./images/borutogenerations.jpg">
-        <img src="./images/raisingshieldhero.jpg">
-        <img src="./images/tokyoghoul.jpg">
-    </div>
+     <!--Navbar-->
+     <nav  class="navbar navbar-light navbar-top fixed-top navbar-expand-lg px-2" id="navbar-Color">
     
-    <ul class="nav justify-content-end navlink">
-        <li class="nav-item">
-          <a class="nav-link" id="userlogin" href="#">LOGIN</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="animepricing.html">PLANS</a>
-        </li>
-      </ul>
-
-      <button class="menubar"><img class="menubaricon" src="./images/menubaricon.png"></button>
-
-      </div>
-
-      <div class="centerintro">
-
-      <div class="animecollection">
-          <h1>The largest Anime collection in your pocket</h1>
-          <a href="animeapi.html"><button>Explore More</button></a>
-      </div>
-
-      <div class="container">
-
-        <div class="row row-cols-2">
-
-          <div class="col">
-            <i class="bi bi-clock"></i>
-            <p>Watch new episodes everyday at anytime</p>
-          </div>
-
-          <div class="col">
-            <i class="bi bi-bag"></i>
-            <p>Join with us with affordable plans</p>
-          </div>
-
-          <div class="col">
-            <i class="bi bi-camera-video"></i>
-              <p>Watch ad-free</p>
-          </div>
-
-          <div class="col">
-             <i class="bi bi-download"></i>
-             <p>Download your favourite anime even in offline</p>
-          </div>
+        <a class="navbar-brand text-warning" href="#">Anime4Fun</a>
+    
+        <div class="collapse navbar-fixed bg-light navbar-collapse text-center" id="navbarNav">
+         
+          <ul class="nav nav-pills navbar-nav" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">HOME</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="false">LOGIN</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-plans-tab" data-bs-toggle="pill" data-bs-target="#pills-plans" type="button" role="tab" aria-controls="pills-plans" aria-selected="false">PLANS</button>
+            </li>
+          </ul>
 
         </div>
 
-      </div>
+        <div class="navbar-btn">
+          <button class="navbar-toggler border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </div>
+        
+      </nav>
+  <!--End of Navbar-->
 
-      </div>
+  <!-- Homepage -->
 
-      </main>
-
-      <div class="secondpage">
-        <h2>Watch your favourite anime at anytime and anywhere on different devices</h2>
-      
-   <img src="./images/mockup device.jpg">
-  
-  </div>
-
-  <div class="animelist">
-    <h2>Watch over 30,000 episodes everyday</h2>
-    <div class="animeshow"></div>
-  </div>
-  
-  
-  <div class="questions">
-      <h2>Questions?</h2>
-      <p>Visit our Help Center to learn more.</p>
-    </div>
-
-    <hr>
-
-    <div class="accordionpage">
-      
-      <h2>FAQS</h2>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     
-      <div class="accordion accordion-flush" id="accordionFlushExample">
+      
+      <div class="main">
+    
+        <div class="backgroundimages">
+            <img src="./images/attackontitan.jpg">
+            <img src="./images/borutogenerations.jpg">
+            <img src="./images/raisingshieldhero.jpg">
+            <img src="./images/tokyoghoul.jpg">
+        </div>
+    
+          </div>
+    
+          <div class="centerintro">
+    
+          <div class="animecollection">
+              <h1>The largest Anime collection in your pocket</h1>
+              <ul class="nav nav-pills navbar-nav mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link px-5" id="pills-exlpore-tab" data-bs-toggle="pill" data-bs-target="#pills-explore" type="button" role="tab" aria-controls="pills-explore" aria-selected="true">EXPLORE</button>
+                </li>
+          </div>
+    
+          <div class="container">
+    
+            <div class="row row-cols-2">
+    
+              <div class="col">
+                <i class="bi bi-clock"></i>
+                <p>Watch new episodes everyday at anytime</p>
+              </div>
+    
+              <div class="col">
+                <i class="bi bi-bag"></i>
+                <p>Join with us with affordable plans</p>
+              </div>
+    
+              <div class="col">
+                <i class="bi bi-camera-video"></i>
+                  <p>Watch ad-free</p>
+              </div>
+    
+              <div class="col">
+                 <i class="bi bi-download"></i>
+                 <p>Download your favourite anime even in offline</p>
+              </div>
+    
+            </div>
+    
+          </div>
+    
+          </div>
+
+          <div class="secondpage">
+            <h2>Watch your favourite anime at anytime and anywhere on different devices</h2>
+          
+       <img src="./images/mockup device.jpg">
+      
+      </div>
+    
+      <div class="animelist">
+        <h2>Watch over 30,000 episodes everyday</h2>
+        <div class="animeshow"></div>
+      </div>
+      
+      
+      <div class="questions">
+          <h2>Questions?</h2>
+          <p>Visit our Help Center to learn more.</p>
+        </div>
+    
+        <hr>
+    
+        <!-- accordion page -->
+        <div class="accordionpage">
+          
+          <h2>FAQS</h2>
+        
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  What is Anime4Fun?
+                </button>
+              </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, doloribus.</div>
+          </div>
+        </div>
+        
         <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              What is Anime4Fun?
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              What payment do you accept?
             </button>
           </h2>
-      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, doloribus.</div>
-      </div>
-    </div>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, officia!</div>
+          </div>
+        </div>
     
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-          What payment do you accept?
-        </button>
-      </h2>
-      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, officia!</div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-         How can I cancel My Membership?
-        </button>
-      </h2>
-      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, porro.</div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingFour">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-         How can I contact to Customer Service?
-        </button>
-      </h2>
-      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, porro.</div>
-      </div>
-    </div>
-          
-          <div class="accordion-item">
-      <h2 class="accordion-header" id="flush-headingFive">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
-         Can I watch in both Subs and Dubs?
-        </button>
-      </h2>
-      <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-        <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, porro.</div>
-      </div>
-    </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+             How can I cancel My Membership?
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, porro.</div>
+          </div>
+        </div>
     
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+             How can I contact to Customer Service?
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, porro.</div>
+          </div>
+        </div>
+              
+              <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFive">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+             Can I watch in both Subs and Dubs?
+            </button>
+          </h2>
+          <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur, porro.</div>
+          </div>
+        </div>
+        
+        
+        </div>
     
-    </div>
-
+        
+        
+        </div>
+        <!-- end of accordion page -->
     
+        <hr>
     
-    </div>
-
-    <hr>
-
-<footer>
-
-<div class="displayflex">
-  
-  <div>
-    <ul>
-      <h2>Popular Shows</h2>
-      <li>Dragon Ball Z</li>
-      <li>One Piece</li>
-      <li>Naruto Shippuden</li>
-      <li>Boruto Next Generations</li>
-      <li>Gintama</li>
-    </ul>
-    </div>
-
-    <div>
-      <ul>
-        <h2>Platform and Devices</h2>
-        <li>Mobile</li>
-        <li>Desktop</li>
-        <li>Tablet</li>
-      </ul>
-      </div>
-
+        <!-- footer -->
+    <footer>
+    
+    <div class="footerflex">
+      
       <div>
         <ul>
-          <h2>Language</h2>
-          <li>English (UK)</li>
-          <li>English (USA)</li>
-          <li>Japanese</li>
+          <h2>Popular Shows</h2>
+          <li>Dragon Ball Z</li>
+          <li>One Piece</li>
+          <li>Naruto Shippuden</li>
+          <li>Boruto Next Generations</li>
+          <li>Gintama</li>
         </ul>
         </div>
-  
-
-  </div>
-
-</footer>
-
-
-<div class="social">
-  <i class="bi bi-facebook"></i>
-  <i class="bi bi-instagram"></i>
-  <i class="bi bi-twitter"></i>
-  <i class="bi bi-youtube"></i>
-</div>
-
-</div>
-
-
-<div class="loginform">
-
-  <div class="main">
-
-    <a href="index.html"><header>Anime4Fun</header></a>
     
-    <ul class="nav justify-content-end navlink2 navlink">
+        <div>
+          <ul>
+            <h2>Platform and Devices</h2>
+            <li>Mobile</li>
+            <li>Desktop</li>
+            <li>Tablet</li>
+          </ul>
+          </div>
+    
+          <div>
+            <ul>
+              <h2>Language</h2>
+              <li>English (UK)</li>
+              <li>English (USA)</li>
+              <li>Japanese</li>
+            </ul>
+            </div>
+      
+    
+      </div>
+    
+    </footer>
 
-      <li class="nav-item">
-        <a class="nav-link" id="homepage" href="index.html">HOME</a>
-      </li>
+    <!-- end of footer -->
+    
+    <!-- social icons -->
+    <div class="social">
+      <i class="bi bi-facebook"></i>
+      <i class="bi bi-instagram"></i>
+      <i class="bi bi-twitter"></i>
+      <i class="bi bi-youtube"></i>
+    </div>
 
-        <li class="nav-item">
-          <a class="nav-link" href="animeapi.html">EXPLORE</a>
-        </li>
-      </ul>
+    <!-- end of social icons -->
+    
 
-      <button class="menubar2 menubar"><img class="menubaricon" src="./images/menubaricon.png"></button>
+    </div>
+
+    <!-- End of homepage -->
+
+    <!-- account page -->
+    <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+      
+      <div class="accountform">
+      
+        <div class="loginpage">
+            <h1>Sign In</h1>
+            <h2>Email Address</h2>
+            <input type="text" id="email" placeholder="Enter your Email Address">
+            <h2>Password</h2>
+            <input type="password" id="password" placeholder="Enter your password">
+            <br>
+            <input type="checkbox" onclick="pwdcheck()">Show Password
+            <br>
+            <button class="btn btn-primary" id="loginbtn">Login</button>
+            <p class="createaccount">Create An Account</p>
+        </div>
+      
+        <div class="Signup">
+            <h1>Sign Up</h1>
+            <h2>Email Address</h2>
+            <input type="text" id="email2" placeholder="Enter your Email Address">
+            <h2>Password</h2>
+            <input type="password" class="pwd" id="password2" placeholder="Enter your password">
+            <h2>Enter your Password</h2>
+            <input type="password" class="pwd" id="passwordcheck" placeholder="Enter your password">
+            <br>
+            <input type="checkbox" onclick="pwdcheck2()">Show Password
+            <br>
+            <button class="btn btn-primary" id="signupbtn">Sign Up</button>
+            <p class="haveaccount">Already have an Account</p>
+        </div>
+      
+        </div>
+      
+      
+    </div>
+
+    <!-- end of accordion page -->
+
+    <!-- pricing page -->
+
+    <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
+      
+      <div class="row pricing w-100 row-cols-1 row-cols-md-3 text-center">
+
+        <div class="col w-100">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Free</h4>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-crown"></i>
+              <h1 class="card-title pricing-card-title">£0.00<small class="text-muted fw-light">/mo</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                  <li><i class="bi bi-check"></i> Stream on 1 Device at a time</li>
+                  <li><i class="bi bi-check"></i> Umlimited access to library</li>
+                  <li><i class="bi bi-check"></i> New video one hour after Japan</li>
+                  <li><i class="bi bi-x-circle"></i> No Ad</li>
+                  <li><i class="bi bi-x-circle"></i> Offline Viewing</li>
+                <li><i class="bi bi-x-circle"></i> 16% discount on Monthly Plan (billed every 12 months)</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col w-100">
+          <div class="card mb-4 rounded-3 shadow-sm pro">
+              <h4>Most Popular</h4>
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Pro</h4>
+              </div>
+            <div class="card-body">
+              <i class="bi bi-crown"></i>
+              <h1 class="card-title pricing-card-title">£7.99<small class="text-muted fw-light">/mo</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                  <li><i class="bi bi-check"></i> No Ad</li>
+                  <li><i class="bi bi-check"></i> Offline Viewing</li>
+                  <li><i class="bi bi-check"></i> Stream on 4 devices at a time</li>
+                  <li><i class="bi bi-check"></i> New video one hour after Japan</li>
+                  <li><i class="bi bi-check"></i> Unlimited Access to library</li>
+                  <li><i class="bi bi-x-circle"></i> 16% discount on Monthly Plan (billed every 12 months)</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col w-100">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Enterprise</h4>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-crown"></i>
+              <h1 class="card-title pricing-card-title">£79<small class="text-muted fw-light">/yr</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                  <li><i class="bi bi-check"></i> No Ad</li>
+                  <li><i class="bi bi-check"></i> Offline Viewing</li>
+                  <li><i class="bi bi-check"></i> Stream on 4 devices at a time</li>
+                  <li><i class="bi bi-check"></i> New video one hour after Japan</li>
+                  <li><i class="bi bi-check"></i> Unlimited Access to library</li>
+                  <li><i class="bi bi-check"></i> 16% discount on Monthly Plan (billed every 12-months)</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       </div>
 
+      <!-- end of pricing page -->
 
-<div class="accountform">
+      <div class="tab-pane fade" id="pills-explore" role="tabpanel" aria-labelledby="pills-explore-tab">
 
+        <!-- animesearch -->
+    
+        <form id="form" class="animeform">
+          <input type="text" id="input" placeholder="search">
+      </form>
+   
+      <div id="tags"></div>
+   
+           <div class="containerbox"></div>
+   
+           <div class="container2"></div>
 
+      <!-- anime search -->
 
-  <div class="loginpage">
-      <h1>Sign In</h1>
-      <h2>Email Address</h2>
-      <input type="text" id="email" placeholder="Enter your Email Address">
-      <h2>Password</h2>
-      <input type="password" id="password" placeholder="Enter your password">
-      <br>
-      <input type="checkbox" onclick="pwdcheck()">Show Password
-      <br>
-      <button class="btn btn-primary" id="loginbtn">Login</button>
-      <p class="createaccount">Create An Account</p>
-  </div>
+        </div>
+      
 
-  <div class="Signup">
-      <h1>Sign Up</h1>
-      <h2>Email Address</h2>
-      <input type="text" id="email2" placeholder="Enter your Email Address">
-      <h2>Password</h2>
-      <input type="password" class="pwd" id="password2" placeholder="Enter your password">
-      <h2>Enter your Password</h2>
-      <input type="password" class="pwd" id="passwordcheck" placeholder="Enter your password">
-      <br>
-      <input type="checkbox" onclick="pwdcheck2()">Show Password
-      <br>
-      <button class="btn btn-primary" id="signupbtn">Sign Up</button>
-      <p class="haveaccount">Already have an Account</p>
-  </div>
+    </div>
 
-
-  </div>
-
-  </div>
 
 </body>
 
