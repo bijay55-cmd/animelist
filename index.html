@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animelist</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
 </head>
 
 <body>
+
      <!--Navbar-->
      <nav  class="navbar navbar-light navbar-top fixed-top navbar-expand-lg px-2" id="navbar-Color">
     
@@ -20,18 +21,10 @@
     
         <div class="collapse navbar-fixed bg-light navbar-collapse text-center" id="navbarNav">
          
-          <ul class="nav nav-pills navbar-nav" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">HOME</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button" role="tab" aria-controls="pills-login" aria-selected="false">LOGIN</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-plans-tab" data-bs-toggle="pill" data-bs-target="#pills-plans" type="button" role="tab" aria-controls="pills-plans" aria-selected="false">PLANS</button>
-            </li>
-          </ul>
-
+            <button class="tablinks" id="defaultOpen" onclick="Tabspage(event, 'Home')">HOME</button>
+            <button class="tablinks" onclick="Tabspage(event, 'Login')">LOGIN</button>
+            <button class="tablinks" onclick="Tabspage(event, 'Plans')">PLANS</button>
+         
         </div>
 
         <div class="navbar-btn">
@@ -45,8 +38,7 @@
 
   <!-- Homepage -->
 
-  <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+  <div id="Home" class="tabcontent">
     
       
       <div class="main">
@@ -64,10 +56,7 @@
     
           <div class="animecollection">
               <h1>The largest Anime collection in your pocket</h1>
-              <ul class="nav nav-pills navbar-nav mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link px-5" id="pills-exlpore-tab" data-bs-toggle="pill" data-bs-target="#pills-explore" type="button" role="tab" aria-controls="pills-explore" aria-selected="true">EXPLORE</button>
-                </li>
+              <button  class="tablinks px-3" onclick="Tabspage(event, 'Explore')">Explore</button>
           </div>
     
           <div class="container">
@@ -240,15 +229,14 @@
       <i class="bi bi-youtube"></i>
     </div>
 
-    <!-- end of social icons -->
-    
-
     </div>
+
+    <!-- end of social icons -->
 
     <!-- End of homepage -->
 
     <!-- account page -->
-    <div class="tab-pane fade" id="pills-login" role="tabpanel" aria-labelledby="pills-login-tab">
+    <div id="Login" class="tabcontent">
       
       <div class="accountform">
       
@@ -281,91 +269,90 @@
         </div>
       
         </div>
-      
-      
-    </div>
+      </div>
+
 
     <!-- end of accordion page -->
 
     <!-- pricing page -->
 
-    <div class="tab-pane fade" id="pills-plans" role="tabpanel" aria-labelledby="pills-plans-tab">
+    <div id="Plans" class="tabcontent">
       
-      <div class="row pricing w-100 row-cols-1 row-cols-md-3 text-center">
-
-        <div class="col w-100">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Free</h4>
-            </div>
-            <div class="card-body">
-              <i class="bi bi-crown"></i>
-              <h1 class="card-title pricing-card-title">£0.00<small class="text-muted fw-light">/mo</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                  <li><i class="bi bi-check"></i> Stream on 1 Device at a time</li>
-                  <li><i class="bi bi-check"></i> Umlimited access to library</li>
-                  <li><i class="bi bi-check"></i> New video one hour after Japan</li>
-                  <li><i class="bi bi-x-circle"></i> No Ad</li>
-                  <li><i class="bi bi-x-circle"></i> Offline Viewing</li>
-                <li><i class="bi bi-x-circle"></i> 16% discount on Monthly Plan (billed every 12 months)</li>
-              </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col w-100">
-          <div class="card mb-4 rounded-3 shadow-sm pro">
-              <h4>Most Popular</h4>
+      <div class="pricing">
+        <div class="row w-100 row-cols-1 row-cols-md-3 text-center">
+  
+          <div class="col w-100">
+            <div class="card mb-4 rounded-3 shadow-sm">
               <div class="card-header py-3 text-white bg-primary border-primary">
-                <h4 class="my-0 fw-normal">Pro</h4>
+                <h4 class="my-0 fw-normal">Free</h4>
               </div>
-            <div class="card-body">
-              <i class="bi bi-crown"></i>
-              <h1 class="card-title pricing-card-title">£7.99<small class="text-muted fw-light">/mo</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                  <li><i class="bi bi-check"></i> No Ad</li>
-                  <li><i class="bi bi-check"></i> Offline Viewing</li>
-                  <li><i class="bi bi-check"></i> Stream on 4 devices at a time</li>
-                  <li><i class="bi bi-check"></i> New video one hour after Japan</li>
-                  <li><i class="bi bi-check"></i> Unlimited Access to library</li>
+              <div class="card-body">
+                <i class="bi bi-crown"></i>
+                <h1 class="card-title pricing-card-title">£0.00<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li><i class="bi bi-check"></i> Stream on 1 Device at a time</li>
+                    <li><i class="bi bi-check"></i> Umlimited access to library</li>
+                    <li><i class="bi bi-check"></i> New video one hour after Japan</li>
+                    <li><i class="bi bi-x-circle"></i> No Ad</li>
+                    <li><i class="bi bi-x-circle"></i> Offline Viewing</li>
                   <li><i class="bi bi-x-circle"></i> 16% discount on Monthly Plan (billed every 12 months)</li>
-              </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col w-100">
+            <div class="card mb-4 rounded-3 shadow-sm pro">
+                <h4>Most Popular</h4>
+                <div class="card-header py-3 text-white bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Pro</h4>
+                </div>
+              <div class="card-body">
+                <i class="bi bi-crown"></i>
+                <h1 class="card-title pricing-card-title">£7.99<small class="text-muted fw-light">/mo</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li><i class="bi bi-check"></i> No Ad</li>
+                    <li><i class="bi bi-check"></i> Offline Viewing</li>
+                    <li><i class="bi bi-check"></i> Stream on 4 devices at a time</li>
+                    <li><i class="bi bi-check"></i> New video one hour after Japan</li>
+                    <li><i class="bi bi-check"></i> Unlimited Access to library</li>
+                    <li><i class="bi bi-x-circle"></i> 16% discount on Monthly Plan (billed every 12 months)</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col w-100">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Enterprise</h4>
+              </div>
+              <div class="card-body">
+                <i class="bi bi-crown"></i>
+                <h1 class="card-title pricing-card-title">£79<small class="text-muted fw-light">/yr</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li><i class="bi bi-check"></i> No Ad</li>
+                    <li><i class="bi bi-check"></i> Offline Viewing</li>
+                    <li><i class="bi bi-check"></i> Stream on 4 devices at a time</li>
+                    <li><i class="bi bi-check"></i> New video one hour after Japan</li>
+                    <li><i class="bi bi-check"></i> Unlimited Access to library</li>
+                    <li><i class="bi bi-check"></i> 16% discount on Monthly Plan (billed every 12-months)</li>
+                </ul>
+                <button type="button" class="w-100 btn btn-lg btn-primary">Get Started</button>
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="col w-100">
-          <div class="card mb-4 rounded-3 shadow-sm border-primary">
-            <div class="card-header py-3 text-white bg-primary border-primary">
-              <h4 class="my-0 fw-normal">Enterprise</h4>
-            </div>
-            <div class="card-body">
-              <i class="bi bi-crown"></i>
-              <h1 class="card-title pricing-card-title">£79<small class="text-muted fw-light">/yr</small></h1>
-              <ul class="list-unstyled mt-3 mb-4">
-                  <li><i class="bi bi-check"></i> No Ad</li>
-                  <li><i class="bi bi-check"></i> Offline Viewing</li>
-                  <li><i class="bi bi-check"></i> Stream on 4 devices at a time</li>
-                  <li><i class="bi bi-check"></i> New video one hour after Japan</li>
-                  <li><i class="bi bi-check"></i> Unlimited Access to library</li>
-                  <li><i class="bi bi-check"></i> 16% discount on Monthly Plan (billed every 12-months)</li>
-              </ul>
-              <button type="button" class="w-100 btn btn-lg btn-primary">Get Started</button>
-            </div>
-          </div>
+  
         </div>
-      </div>
 
       </div>
 
       <!-- end of pricing page -->
+      <div id="Explore" class="tabcontent">
 
-      <div class="tab-pane fade" id="pills-explore" role="tabpanel" aria-labelledby="pills-explore-tab">
-
-        <!-- animesearch -->
-    
         <form id="form" class="animeform">
           <input type="text" id="input" placeholder="search">
       </form>
@@ -375,15 +362,10 @@
            <div class="containerbox"></div>
    
            <div class="container2"></div>
-
-      <!-- anime search -->
-
+           
+          </div>
+          
         </div>
-      
-
-    </div>
-
-
 </body>
 
 </html>
