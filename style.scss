@@ -1,317 +1,97 @@
 // media queries
 @mixin for-size($size){
 
-@if $size == tablet{
-    @media (min-width:720px){
-        @content;
-    }
-}
-    @else if $size == med-screen{
-        @media (min-width:1020px){
+    @if $size == tablet{
+        @media (min-width:720px){
             @content;
         }
     }
-        @else if $size == desktop{
-            @media (min-width:1440px){
+        @else if $size == med-screen{
+            @media (min-width:1020px){
                 @content;
             }
-}
-}
+        }
+            @else if $size == desktop{
+                @media (min-width:1440px){
+                    @content;
+                }
+    }
+    }
 
-*{
+* {
     box-sizing: border-box;
     padding:0;
     margin:0;
 }
-
 body{
-    background:burlywood !important;
-    overflow-x:hidden;
+    background:darkcyan;
 }
-//tabcontent
-
-.tabcontent {
-    display: none;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
-  .tablinks{
-      border:none;
-      background:transparent;
-      font-size: 20px;
-  }
-  .navbar-tabs{
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      background:whitesmoke;
-  }
-
-// homepage
-.centerintro{
-    position: relative;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+input{
+    width:100%;
+    padding:10px;
+    border:none;
+}
+.animeshow{
+    display:grid;
+    grid-gap:10px;
+    padding:10px 0;
     text-align: center;
-    height:100vh;
-    font-size: 20px;
-    color:white;
-    .col{
-        text-align:center;
-        color:white;
-        .col img{
-            width:50px;
-            height:50px;
-        }
-        i{
-            font-size: 20px !important;
-            color:white !important;
-        }
+
+    div{
+        background:whitesmoke;
+        padding:10px;
     }
-    .animecollection{
-        text-align:center;
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height:30vh;
-        color:white;
-    
-        button{
-            border:4px solid white;
-            background:darkcyan;
-            color:white;
-            font-size: 20px;
-        }
-    
-    }
-}
-.backgroundimages{
-    position: absolute;
-    z-index:-100;
-    display:flex;
-    top:0;
-    right:0;
-    left:0;
-    overflow: hidden;
-    img{
-        width:50vw;
-        height:100vh;
-        filter: brightness(50%);
-    }
-}
-//second page
-.secondpage{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 
     img{
         width:100%;
-        height:100%;
-    }
-     h2{
-        margin:50px 20px !important;
-    }
-}
-.animelist{
-    text-align: center;
-    padding:50px 0;
-    .animelist h2{
-        margin: auto 20px !important;
-        }
-        //anime collection
-        .animeshow{
-            display:flex;
-            margin:50px auto;
-           overflow: hidden;
-           img{
-               width:30vw;
-               height:30vh;
-               margin:5px;
-               position: relative;
-               left:-20px;
-               animation:scrollinfinite 200s linear infinite;
-           }
-        }
-}
-@keyframes scrollinfinite{
-    0%{
-        transform:translateX(0)
-    }
-    100%{
-        transform:translateX(calc(-250px * 20));
-    }
-}
-//accordion
-.accordionpage{
-    text-align: center;
-    margin:50px 0;
-   button{
-        background:burlywood !important;
-    }
-    .accordion-body{
-        text-align: left ;
-    }
-}
-.footerflex{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    font-size: 15px;
-    margin:20px;
-    position: relative;
-    right:10px;
-    justify-content: center;
-   h2{
-        font-size: 20px;
-        font-weight: bold;
-    }
-    ul{
-        list-style: none;
-    }
-}
-.questions{
-    text-align: center;
-    padding:20px 0;
-}
-.social{
-    display: flex;
-    justify-content: center;
-    
-    i{
-        margin:20px 10px;
-        color:white;
-        font-size: 30px;
+        height:300px;
     }
 }
 
-// account form
-.accountform{
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    display:flex;
-    height:100vh;
-}
-input{
-    border:none;
-    padding:10px;
-}
-.Signup{
-    display:none;
-}
-a{
-    text-decoration: none !important;
-}
-
-//pricing
-.pro{
-    border:4px solid darkslategrey !important;
-}
-.lni-crown{
-    font-size: 30px !important;
-    color:orange !important;
-}
-.pricing{
-  position: relative;
-  top:100px;
-    margin-left:25px;
-}
-
-// anime
-#Explore{
-margin:70px auto;
-}
-.containerbox{
-    display: grid;
-    grid-template-columns: auto;
-}
-.container2{
-    display: grid;
-    grid-template-columns: auto;
-}
-.animeform{
-    margin-top:50px;
-}
-input{
-    width:100%;
-    padding:10px;
-    text-transform: uppercase;
-}
-.animecard{
-    padding: 10px;
-    margin:10px;
-    background:whitesmoke;
-    position: relative;
-    text-align: center;
-}
-
-img{
-    width:100%;
-    height:300px;
-}
-.info{
-    position: fixed;
+.movie-list{
+    background:darkcyan;
     top:0;
     right:0;
     left:0;
-    opacity:0;
-    bottom:0;
-    background:lightblue;
-    pointer-events: none;
-    z-index:500;
-    padding:50px 20px;
-    text-align: center;
-    overflow: auto;
-    scroll-behavior: smooth;
-    scrollbar-width:none;
-}
-
-.info::-webkit-scrollbar {
-    display: none;
-  }
-.info > p{
-    margin:10px;
-}
-.info.show{
-    opacity:1;
-    pointer-events: auto;
-}
-
-.closebtn{
-    position: absolute;
-    right:0;
-    top:0;
-    border:none;
-    padding:10px;
-    background:darkcyan;
-    color:white;
-    text-transform: uppercase;
-}
-#tags{
-    display:flex;
-}
-.tag.highlight{
-background:coral;
-}
-.tag{
-    background:deepskyblue;
     width:100%;
-    border:none;
-    color:white;
-    padding:5px 0;
+    height:100%;
+    z-index:1;
+    overflow:auto;
+    position:fixed;
+    visibility: hidden;
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    padding:20px;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+    
+    button{
+        position: absolute;
+        top:0;
+        right:0;
+        background:deepskyblue;
+        border:none;
+        padding:10px 20px;
+        color:white;
+    }
+
+.date{
+        display: flex;
+        justify-content: space-between;
+        width:100%;
+        justify-content: center;
+    *{
+        margin:10px;
+    }
+    }
 }
 .rating{
-    display: flex;
+    display:flex;
     justify-content: space-between;
-    padding:0 10px;
 }
 .orange{
-    color: orange;
+    color:orange;
 }
 .green{
     color:green;
@@ -319,110 +99,17 @@ background:coral;
 .red{
     color:red;
 }
-.date{
-    display:flex;
-    justify-content: center;
-}
-.date p{
-    margin:0 10px;
-}
-.infoimg{
-    width:50%;
-    height:20%;
-}
 @include for-size(tablet){
-  .pricing{
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  .containerbox{
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-.container2{
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-.info{
-    img{
-        height:500px;
-    }
-}
-.footerflex{
-    font-size: 20px;
-    justify-content: space-between;
-    .h2{
-        font-size: 20px;
-    }
-}
-}
 
-
-@include for-size(med-screen){
-    .navbar-tabs{
-        display:flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        background:transparent;
-        button{
-            border:4px solid white;
-            background:darkcyan;
-            color:white;
-            font-size: 20px;
-            padding:0 10px;
-            margin:0 5px;
-        }
-    }
-    .row{
-        display:grid !important;
-        grid-template-columns: auto auto auto auto !important;
-        justify-content: center;
-        grid-gap:100px !important;
-        .col{
-            width:100% !important;
-        }
+    .animeshow{
+        grid-template-columns: auto auto auto;
     }
 
-    .backgroundimages img{
-        width:40vw;
-    }
-    .pricing{
-        flex-direction: row;
-        margin: 100px 50px;
-    }
-    .containerbox{
-        grid-template-columns: auto auto auto auto;
-    }
-    .container2{
-        grid-template-columns: auto auto auto auto;
-    }
-    .img{
-        height:400px;
-    }
-    .infoimg{
-        width:30%;
-        height:50%;
-    }
 }
-
 
 @include for-size(desktop){
-   .backgroundimages{
-       img{
-           width:100%;
-       }
-   }
-   img{
-       height:100vh;
-   }
-   .social{
-        i{
-            font-size: 30px !important;
-        }
+    .animeshow{
+        grid-template-columns: auto auto auto auto;
     }
-   #result{
-    grid-template-columns: auto auto auto auto auto;
 }
-}
+
