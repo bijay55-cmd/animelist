@@ -156,122 +156,215 @@ signupbtn.addEventListener('click', () => {
       }
 
 // anime collection
+//scrollbar nvabar bg-color change
 
-var container = document.querySelector('.containerbox')
+window.onscroll = function() {scrollFunction()};
 
-const apishow = 'https://api.jikan.moe/v4/anime?q=duel';
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("navbar-Color").style.backgroundColor = "black";
+      document.getElementById("navbar-Color").style.transition = "0.5s all";
+    } else {
+        document.getElementById("navbar-Color").style.backgroundColor = "transparent";
+        document.getElementById("navbar-Color").style.transition = "0.5s all";
+    }
+}
 
+//tabs page
+function Tabspage(evt, Tabsname) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+  
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+  
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(Tabsname).style.display = "block";
+    evt.currentTarget.className += " active";
+  } 
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
 
-const genres = [
-    {
-        'id':1,
-        'name':'Action'
-    },
-    {
-        'id':2,
-        'name':'Adventure'
-    },
-    {
-        'id':36,
-        'name':'Slice of Life'
-    },
-    {
-        'id':8,
-        'name':'Drama'
-    },
-    {
-        'id':43,
-        'name':'Josei'
-    },
-    {
-        'id':30,
-        'name':'Sports'
-    },
-]
+//anime page collection
+//list of animes are shown in the container from the api
+const apianime = 'https://api.jikan.moe/v3/search/anime?q=&order_by=members&sort=desc&page=1';
 
-
-function display(url){
-
-fetch(url).then(res => res.json()).then(json => {
-container.innerHTML = "";
-if(json.data){
-    json.data.forEach(movie => {
-
-var card = `
-<div class="animecard">
-<img class="img" src="${movie.images.jpg.image_url}">
-<p>${movie.title}</p>
-<div class="rating">
-<p>Rating</p>
-<p class="${getColor(movie.score)}">${movie.score}</p>
-</div>
-<div class="info">
-<img class="infoimg" src="${movie.images.jpg.image_url}">
-<p>Type: ${movie.type}</p>
-<p>Full Episodes: ${movie.episodes}</p>
-<p>Title: ${movie.title}</p>
-<div class="date">
-<p>Start Date: ${moviedate(movie.aired.from)}</p>
-<p>End Date: ${moviedate(movie.aired.to)}</p>
-</div>
-<br>
-<h2>Description</h2>
-<p>${movie.synopsis}</p>
-<p>Status: ${movie.status}</p>
-<br>
-<iframe width="100%" height="315"
-src="https://www.youtube.com/embed/${movie.trailer.youtube_id}">
-</iframe> 
-<div>
-</div> 
-<button class="closebtn">Close</button>
-</div>
-</div>
-`
-container.innerHTML += card;
-
-
-const questions = document.querySelectorAll('.animecard');
-
-questions.forEach(function (question){
+function slidemovies(url){
     
-const btn = question.querySelector('.img');
+    fetch(url).then(res => res.json()).then(data => {
+        resultmovies(data.results);
+    })
+
+}
+
+slidemovies(apianime);
+
+var result = document.querySelector('.animeshow')
 
 
-const btn2 = question.querySelector('.closebtn')
+//creating each card by calling the title from api 
+function resultmovies(data){
+
+    result.innerHTML = "";
+
+    data.forEach(movie => {
+
+       var card= `
+       <img src="${movie.image_url}">
+        `
+      
+        result.innerHTML += card;
+
+    });
+
+}
 
 
-btn.addEventListener('click', function(){
+//account form
 
-question.querySelector('.info').classList.toggle('show');
+var createaccount = document.querySelector('.createaccount');
 
+var haveaccount = document.querySelector('.haveaccount');
+
+createaccount.addEventListener('click', () => {
+    document.querySelector('.Signup').style.display="block";
+    document.querySelector('.loginpage').style.display="none";
 })
 
-btn2.addEventListener('click', function(){
+haveaccount.addEventListener('click', () => {
+    document.querySelector('.Signup').style.display="none";
+    document.querySelector('.loginpage').style.display="block";
+})
 
-        question.querySelector('.info').classList.remove('show');
+var loginbtn = document.getElementById('loginbtn')
+var signupbtn = document.getElementById('signupbtn')
 
-        const iframes = document.getElementsByTagName('iframe');
-        if(iframes !== null){
-            for(let i=0; i<iframes.length; i++){
-                iframes[i].src = iframes[i].src;
-            }
+loginbtn.addEventListener('click', () => {
+
+var email = document.getElementById('email').value;
+var password = document.getElementById('password').value;
+var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+if(email == ''){
+    alert ("Please enter your email")
+}else if(password == ''){
+    alert('Please enter your password')
+}else if(!filter.test(email)){
+alert('Enter a valid email id')
+}else if(password.length < 6){
+    alert('Password')
+}
+else{
+    alert('Thank you for login')
+}
+})
+
+signupbtn.addEventListener('click', () => {
+
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password2').value;
+    var passwordcheck = document.getElementById('passwordcheck').value;
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    
+    if(email == ''){
+        alert ("Please enter your email")
+    }else if(password == ''){
+        alert('Please enter your password')
+    }else if(!filter.test(email)){
+    alert('Enter a valid email id')
+    }else if(password.length < 6){
+        alert('Password min is 6')
+    }else if(password !== passwordcheck){
+        alert('Please check your password again')
+    }
+    else{
+        alert('Thank you for Signup')
+        document.querySelector('.loginpage').style.display="block";
+        document.querySelector('.Signup').style.display="none";
+    }
+    })
+
+    function pwdcheck2() {
+        var x = document.querySelectorAll(".pwd");
+        for(var i=0; i< x.length; i++){
+        if (x[i].type === "password") {
+          x[i].type = "text";
+        } else {
+          x[i].type = "password";
         }
+      }
+      }
+      
+      function pwdcheck() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+          x.type = "text";
+        } else {
+          x.type = "password";
+        }
+      }
+
+// anime collection
+
+const apishow = 'https://api.jikan.moe/v4/anime';
+
+var container = document.querySelector('.animeshowlist');
+
+var popup = document.querySelector('.movie-list');
+
+function getMovies(url){
+
+    fetch(url).then(res => res.json()).then(data => {
+    showMovies(data.data);
+
     })
+}
+getMovies(apishow);
 
-})
+function showMovies(data){
+    
+    container.innerHTML = "";
 
-    })
 
+        data.forEach((data) => {
+
+            const movieEl = document.createElement('div');
+            movieEl.classList.add('movieEl')
+            
+            movieEl.innerHTML = `
+        
+            <img src="${data.images.jpg.image_url}">
+            <p>${data.title}</p>
+
+            <div class="rating">
+            <p>Rating</p>
+            <p class="${getColor(data.score)}">${data.score}</p>
+            </div>
+            
+            `
+            
+            container.appendChild(movieEl);
+            
+            movieEl.addEventListener('click', () => {
+                showMovieInfo(data)
+               
+               document.querySelector('.movie-list').style.visibility="visible";
+               document.querySelector('nav').style.visibility="hidden";
+            })
+        });
+        
+    
 
 }
-
-
-})
-
-
-}
-
 
 function getColor(score){
     if(score >= 7){
@@ -293,6 +386,48 @@ function moviedate(date){
     }
 }
 
+
+var container2 = document.querySelector('.movie-list')
+
+function showMovieInfo(data){
+
+    container2.innerHTML = "";
+
+    
+    const movieEl = document.createElement('div');
+    movieEl.classList.add('movieEl')
+    
+    movieEl.innerHTML = `
+    <img src="${data.images.jpg.image_url}">
+    <p>${data.title}</p>
+    <p>${data.synopsis}</p>
+    <div class="date">
+<p>Start Date: ${moviedate(data.aired.from)}</p>
+<p>End Date: ${moviedate(data.aired.to)}</p>
+</div>
+<p>Type: ${data.type}</p>
+<p>Full Episodes: ${data.episodes}</p>
+    <iframe width="100%" height="400" src="https://www.youtube.com/embed/${data.trailer.youtube_id}"></iframe>
+    
+    <button class="close-btn">X</button>
+    `
+    
+    container2.appendChild(movieEl);
+
+    var closeBtn = document.querySelector('.close-btn');
+
+    closeBtn.addEventListener('click', () => {
+        document.querySelector('.movie-list').style.visibility="hidden";
+        document.querySelector('nav').style.visibility="visible";
+        const iframes = document.getElementsByTagName('iframe');
+        if(iframes !== null){
+            for(let i=0; i<iframes.length; i++){
+                iframes[i].src = iframes[i].src;
+            }
+        }
+    })
+}
+
 const searchurl = "https://api.jikan.moe/v4/anime?q=";
 
 var input = document.getElementById('input');
@@ -305,192 +440,14 @@ form.addEventListener('submit', (e) => {
 
     const searchTerm = input.value;
 
-
     if(searchTerm ){
-        display(searchurl+searchTerm)
+        getMovies(searchurl+searchTerm)
         document.body.style.background="coral";
-        document.querySelector('.containerbox').style.display="grid";
-        document.querySelector('.container2').style.display="none";
-
-        selectedGenre=[];
-        
-        const tags = document.querySelectorAll('.tag');
-
-        tags.forEach(tag => {
-            tag.classList.remove('highlight');
-        })
-
-        console.clear()
-     
      
     }else{
         document.body.style.background="darkcyan";
-        newanime(animeapi)
-           selectedGenre=[];
-        
-        document.querySelector('.containerbox').style.display="none";
-        document.querySelector('.container2').style.display="grid";
+        getMovies(animeapi)
 
-        const tags = document.querySelectorAll('.tag');
-
-        tags.forEach(tag => {
-            tag.classList.remove('highlight');
-        })
-
-        console.clear()
     }
 })
 
-var genrecode = 'https://api.jikan.moe/v3/search/anime?q=&genre=';
-
-var genre = 'https://api.jikan.moe/v3/search/anime?q=&genre=1';
-
-var container2 = document.querySelector('.container2');
-
-var animeapi = 'https://api.jikan.moe/v3/search/anime?q=&page=1&genre=1,10&order_by=start_date&sort=desc';
-
-
-function newanime(url){
-
-    fetch(url).then(res => res.json()).then(json => {
-    container2.innerHTML = "";
-    if(json.results){
-        json.results.forEach(movie => {
-    
-    var card = `
-    
-    <div class="animecard">
-    <img class="img" src="${movie.image_url}">
-    <p>${movie.title}</p>
-    
-    <div class="rating">
-    <p>Rating</p>
-    <p class="${getColor(movie.score)}">${movie.score}</p>
-    </div>
-    
-    <div class="info">
-    <img class="infoimg" src="${movie.image_url}">
-    <p>Type: ${movie.type}</p>
-    <p>Full Episodes: ${movie.episodes}</p>
-    <p>Title: ${movie.title}</p>
-    <div class="date">
-    <p>Start Date: ${moviedate(movie.start_date)}</p>
-    <p>End Date: ${moviedate(movie.end_date)}</p>
-    </div>
-    <br>
-    <h2>Description</h2>
-    <p>${movie.synopsis}</p>
-    
-    
-    <div>
-    
-    </div> 
-    <button class="closebtn">Close</button>
-    </div>
-    
-    </div>
-    `
-    container2.innerHTML += card;
-    
-    
-    const questions = document.querySelectorAll('.animecard');
-    
-    questions.forEach(function (question){
-        
-    const btn = question.querySelector('.img');
-    
-    
-    const btn2 = question.querySelector('.closebtn')
-    
-    
-    btn.addEventListener('click', function(){
-    
-    question.querySelector('.info').classList.toggle('show');
-    document.getElementById('navbar-Color').style.zIndex="-100";
-
-    })
-    
-    btn2.addEventListener('click', function(){
-    
-            question.querySelector('.info').classList.remove('show');
-            document.getElementById('navbar-Color').style.zIndex="100";
-        })
-    
-    
-    })
-    
-        })
-    
-    
-    }
-    
-    
-    })
-    
-    
-    }
-
-newanime(animeapi);
-
-const tagsEl = document.getElementById('tags')
-
-var selectedGenre = [];
-
-function setGenre(){
-
-tagsEl.innerHTML = '';
-
-genres.forEach(genre => {
-
-    const t = document.createElement('button');
-
-t.classList.add('tag');
-
-t.id = genre.id;
-
-t.innerText = genre.name;
-
-t.addEventListener('click', () => {
-
-    if(selectedGenre.length == 0){
-        selectedGenre.push(genre.id);
-    }else{
-        if(selectedGenre.includes(genre.id)){
-            selectedGenre.forEach((id, idx) => {
-                if(id == genre.id){
-                    selectedGenre.splice(idx, 1)
-                }
-            })
-        }else{
-            selectedGenre.push(genre.id);
-        }
-        
-    }
-    highlightselect();
-})
-tagsEl.append(t);
-})
-
-}
-
-setGenre()
-
-function highlightselect(){
-
-   const tags = document.querySelectorAll('.tag');
-
-   tags.forEach(tag => {
-       tag.classList.remove('highlight');
-       console.clear();
-   })
-
-    if(selectedGenre.length !=0){
-    selectedGenre.forEach(id => {
-        const highlightedTag = document.getElementById(id);
-        highlightedTag.classList.add('highlight')
-        newanime(genrecode+selectedGenre.join(','))
-       document.querySelector('.containerbox').style.display="none";
-         document.querySelector('.container2').style.display="grid";
-    })
-}
-}
