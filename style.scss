@@ -217,8 +217,10 @@ a{
 }
 .pricing{
   position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
   top:100px;
-    margin-left:25px;
 }
 
 // anime
@@ -246,7 +248,9 @@ input{
         height:300px;
     }
 }
-
+.info{
+    display:none;
+}
 .movie-list{
     background:darkcyan;
     top:0;
@@ -265,7 +269,7 @@ input{
     scroll-behavior:smooth;
     scrollbar-width:none;
     
-    .close-btn{
+    .close-btn,.closebtn{
         position: absolute;
         top:0;
         right:0;
@@ -299,14 +303,9 @@ input{
 .red{
     color:red;
 }
+
 @include for-size(tablet){
-  .pricing{
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-  }
-  .animeshowlist{
+  .animeshowlist,.genreselector{
     display: grid;
     grid-template-columns: auto auto auto;
 }
@@ -359,10 +358,10 @@ input{
         width:40vw;
     }
     .pricing{
+        margin-left:100px;
         flex-direction: row;
-        margin: 100px 50px;
     }
-    .animeshowlist{
+    .animeshowlist,.genreselector{
         grid-template-columns: auto auto auto auto;
     }
     .movie-list{

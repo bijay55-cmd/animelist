@@ -287,8 +287,16 @@ a {
 
 .pricing {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   top: 100px;
-  margin-left: 25px;
 }
 
 #Explore {
@@ -319,6 +327,10 @@ input {
   height: 300px;
 }
 
+.info {
+  display: none;
+}
+
 .movie-list {
   background: darkcyan;
   top: 0;
@@ -342,7 +354,7 @@ input {
   scrollbar-width: none;
 }
 
-.movie-list .close-btn {
+.movie-list .close-btn, .movie-list .closebtn {
   position: absolute;
   top: 0;
   right: 0;
@@ -392,22 +404,7 @@ input {
 }
 
 @media (min-width: 720px) {
-  .pricing {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .animeshowlist {
+  .animeshowlist, .genreselector {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: auto auto auto;
@@ -472,13 +469,13 @@ input {
     width: 40vw;
   }
   .pricing {
+    margin-left: 100px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    margin: 100px 50px;
   }
-  .animeshowlist {
+  .animeshowlist, .genreselector {
     -ms-grid-columns: auto auto auto auto;
         grid-template-columns: auto auto auto auto;
   }
