@@ -157,7 +157,7 @@ signupbtn.addEventListener('click', () => {
 
 // anime collection
 
-const apishow = 'https://api.jikan.moe/v4/anime';
+const apishow = 'https://api.jikan.moe/v4/seasons/2022/winter';
 
 var container = document.querySelector('.animeshowlist');
 
