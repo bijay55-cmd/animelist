@@ -284,11 +284,9 @@ form.addEventListener('submit', (e) => {
 
     if(searchTerm ){
         getMovies(searchurl+searchTerm)
-        document.body.style.background="coral";
-     
+ 
     }else{
-        document.body.style.background="darkcyan";
-        getMovies(animeapi)
+        getMovies(apishow)
 
     }
 })
