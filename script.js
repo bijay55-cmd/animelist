@@ -409,7 +409,7 @@ function newanime(url){
         var closebtn = question.querySelector('.closebtn')
 
         closebtn.addEventListener('click', function() {
-            question.querySelector('.info').style.display="none";
+            question.querySelector('.info').classList.remove('show');
             document.querySelector('nav').style.visibility="visible";
             
         })
