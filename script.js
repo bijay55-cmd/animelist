@@ -235,7 +235,7 @@ form.addEventListener('submit', (e) => {
         console.clear()
     }
 })
-var v4anime = "https://api.jikan.moe/v4/anime"
+var v4anime = "https://api.jikan.moe/v4/seasons/upcoming"
 
 var container2 = document.querySelector('.container2');
 
