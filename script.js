@@ -155,57 +155,130 @@ signupbtn.addEventListener('click', () => {
         }
       }
 
+
 // anime collection
 
-const apishow = 'https://api.jikan.moe/v4/seasons/2022/winter';
+const apishow = 'https://api.jikan.moe/v4/anime?q=duel';
 
-var container = document.querySelector('.animeshowlist');
+const genres = [
+    {
+        'id':1,
+        'name':'Action'
+    },
+    {
+        'id':2,
+        'name':'Adventure'
+    },
+    {
+        'id':36,
+        'name':'Slice of Life'
+    },
+    {
+        'id':8,
+        'name':'Drama'
+    },
+    {
+        'id':43,
+        'name':'Josei'
+    },
+    {
+        'id':30,
+        'name':'Sports'
+    },
+]
 
-var popup = document.querySelector('.movie-list');
+const searchurl = "https://api.jikan.moe/v4/anime?q=";
+
+var input = document.getElementById('input');
+
+var form = document.getElementById('form');
+//input search bar were user can search thier specific anime based on title
+form.addEventListener('submit', (e) => {
+
+    e.preventDefault();
+
+    const searchTerm = input.value;
+
+
+    if(searchTerm ){
+        getMovies(searchurl+searchTerm)
+        document.body.style.background="coral";
+        document.querySelector('.genre').style.display="none";
+        document.querySelector('.container2').style.display="grid";
+
+        selectedGenre=[];
+        
+        const tags = document.querySelectorAll('.tag');
+
+        tags.forEach(tag => {
+            tag.classList.remove('highlight');
+        })
+
+        console.clear()
+     
+     
+    }else{
+        document.body.style.background="darkcyan";
+        getMovies(v4anime)
+
+        selectedGenre=[];
+        
+        document.querySelector('.genre').style.display="none";
+        document.querySelector('.container2').style.display="grid";
+
+        const tags = document.querySelectorAll('.tag');
+
+        tags.forEach(tag => {
+            tag.classList.remove('highlight');
+        })
+
+        console.clear()
+    }
+})
+var v4anime = "https://api.jikan.moe/v4/anime"
+
+var container2 = document.querySelector('.container2');
 
 function getMovies(url){
 
     fetch(url).then(res => res.json()).then(data => {
-    showMovies(data.data);
+        showMovies(data.data);
+        })
 
-    })
 }
-getMovies(apishow);
+
+getMovies(v4anime);
+
 
 function showMovies(data){
-    
-    container.innerHTML = "";
+
+    container2.innerHTML = "";
 
 
-        data.forEach((data) => {
+    data.forEach((data) => {
 
-            const movieEl = document.createElement('div');
-            movieEl.classList.add('movieEl')
-            
-            movieEl.innerHTML = `
+        const movieEl = document.createElement('div');
+        movieEl.classList.add('movieEl')
         
-            <img src="${data.images.jpg.image_url}">
-            <p>${data.title}</p>
+        movieEl.innerHTML = `
+        <img src="${data.images.jpg.image_url}">
+        <p>${data.title}</p>
 
-            <div class="rating">
-            <p>Rating</p>
-            <p class="${getColor(data.score)}">${data.score}</p>
-            </div>
-            
-            `
-            
-            container.appendChild(movieEl);
-            
-            movieEl.addEventListener('click', () => {
-                showMovieInfo(data)
-               
-               document.querySelector('.movie-list').style.visibility="visible";
-               document.querySelector('nav').style.visibility="hidden";
-            })
-        });
+        <div class="rating">
+        <p>Rating</p>
+        <p class="${getColor(data.score)}">${data.score}</p>
+        </div>
+        `
         
+        container2.appendChild(movieEl);
+        
+        movieEl.addEventListener('click', () => {
+            showMovieInfo(data)
+            document.querySelector('nav').style.visibility="hidden";
+            document.querySelector('.movie-list').style.visibility="visible";
+        })
+    });
     
-
 }
 
 function getColor(score){
@@ -229,17 +302,16 @@ function moviedate(date){
 }
 
 
-var container2 = document.querySelector('.movie-list')
+var movielist = document.querySelector('.movie-list')
 
 function showMovieInfo(data){
 
-    container2.innerHTML = "";
+    movielist.innerHTML = "";
 
-    
-    const movieEl = document.createElement('div');
-    movieEl.classList.add('movieEl')
-    
+    var movieEl = document.createElement('div')
+
     movieEl.innerHTML = `
+    
     <img src="${data.images.jpg.image_url}">
     <p>${data.title}</p>
     <p>${data.synopsis}</p>
@@ -251,10 +323,12 @@ function showMovieInfo(data){
 <p>Full Episodes: ${data.episodes}</p>
     <iframe width="100%" height="400" src="https://www.youtube.com/embed/${data.trailer.youtube_id}"></iframe>
     
-    <button class="close-btn">X</button>
-    `
     
-    container2.appendChild(movieEl);
+    <button class="close-btn">X</button>
+    
+    `
+
+    movielist.appendChild(movieEl);
 
     var closeBtn = document.querySelector('.close-btn');
 
@@ -268,25 +342,147 @@ function showMovieInfo(data){
             }
         }
     })
+
 }
 
-const searchurl = "https://api.jikan.moe/v4/anime?q=";
+var genrecode = 'https://api.jikan.moe/v3/search/anime?q=&genre=';
 
-var input = document.getElementById('input');
+var genre = 'https://api.jikan.moe/v3/search/anime?q=&genre=1';
 
-var form = document.getElementById('form');
-//input search bar were user can search thier specific anime based on title
-form.addEventListener('submit', (e) => {
+var animeapi = 'https://api.jikan.moe/v3/search/anime?q=&page=1&genre=1,10&order_by=start_date&sort=desc';
 
-    e.preventDefault();
 
-    const searchTerm = input.value;
+var genre = document.querySelector('.genre');
 
-    if(searchTerm ){
-        getMovies(searchurl+searchTerm)
- 
+function newanime(url){
+
+    fetch(url).then(res => res.json()).then(data => {
+        
+        genre.innerHTML = "";
+
+        if(data.results){
+
+        data.results.forEach(movie => {
+
+            var card = `
+            
+            <div class="card">
+            <img class="btn" src="${movie.image_url}">
+            <p>${movie.title}</p>
+            <div class="rating">
+        <p>Rating</p>
+        <p class="${getColor(movie.score)}">${movie.score}</p>
+        </div>
+
+            <div class="info">
+            <img src="${movie.image_url}">
+            <p>${movie.title}</p>
+
+            <p>${movie.synopsis}</p>
+    <div class="date">
+<p>Start Date: ${moviedate(movie.start_date)}</p>
+<p>End Date: ${moviedate(movie.end_date)}</p>
+</div>
+<p>Type: ${movie.type}</p>
+<p>Full Episodes: ${movie.episodes}</p>
+<button class="closebtn">X</button>
+</div>
+
+            </div>
+            
+            `
+
+            genre.innerHTML += card;
+        
+            const questions = document.querySelectorAll('.card');
+
+            questions.forEach(function (question){
+                
+            const btn = question.querySelector('.btn');
+    
+            
+            btn.addEventListener('click', function(){
+    
+        question.querySelector('.info').classList.add('show');
+        document.querySelector('nav').style.visibility="hidden";
+
+        var closebtn = question.querySelector('.closebtn')
+
+        closebtn.addEventListener('click', function() {
+            question.querySelector('.info').style.display="none";
+            document.querySelector('nav').style.visibility="visible";
+            
+        })
+            
+            })
+            })
+
+
+            
+        });
+        }
+    });
+
+}
+const tagsEl = document.getElementById('tags')
+
+var selectedGenre = [];
+
+function setGenre(){
+
+tagsEl.innerHTML = '';
+
+genres.forEach(genre => {
+
+    const t = document.createElement('button');
+
+t.classList.add('tag');
+
+t.id = genre.id;
+
+t.innerText = genre.name;
+
+t.addEventListener('click', () => {
+
+    if(selectedGenre.length == 0){
+        selectedGenre.push(genre.id);
     }else{
-        getMovies(apishow)
-
+        if(selectedGenre.includes(genre.id)){
+            selectedGenre.forEach((id, idx) => {
+                if(id == genre.id){
+                    selectedGenre.splice(idx, 1)
+                }
+            })
+        }else{
+            selectedGenre.push(genre.id);
+        }
+        
     }
+    highlightselect();
 })
+tagsEl.append(t);
+})
+
+}
+
+setGenre()
+
+function highlightselect(){
+
+   const tags = document.querySelectorAll('.tag');
+
+   tags.forEach(tag => {
+       tag.classList.remove('highlight');
+       console.clear();
+   })
+
+    if(selectedGenre.length !=0){
+    selectedGenre.forEach(id => {
+        const highlightedTag = document.getElementById(id);
+        highlightedTag.classList.add('highlight')
+        newanime(genrecode+selectedGenre.join(','))
+        document.querySelector('.genre').style.display="grid";
+       document.querySelector('.container2').style.display="none";
+    })
+}
+}

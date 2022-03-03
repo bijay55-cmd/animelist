@@ -227,96 +227,152 @@ a{
 #Explore{
     margin:70px auto;
     }
-input{
-    width:100%;
-    padding:10px;
-    border:none;
-}
-.animeshowlist{
-    display:grid;
-    grid-gap:10px;
-    padding:10px 0;
-    text-align: center;
-
-    div{
-        background:whitesmoke;
-        padding:10px;
-    }
-
-    img{
+    input{
         width:100%;
-        height:300px;
+        padding:10px;
+        border:none;
     }
-}
-.info{
-    display:none;
-}
-.movie-list{
-    background:darkcyan;
-    top:0;
-    right:0;
-    left:0;
-    width:100%;
-    height:100%;
-    z-index:100;
-    overflow:auto;
-    position:fixed;
-    visibility: hidden;
-    display:flex;
-    justify-content: center;
-    text-align: center;
-    padding:20px;
-    scroll-behavior:smooth;
-    scrollbar-width:none;
     
-    .close-btn,.closebtn{
-        position: absolute;
+    .container2,.genre{
+        display:grid;
+        grid-gap:10px;
+        padding:10px 0;
+        text-align: center;
+    
+        .movieEl,.card{
+            background:whitesmoke;
+            padding:10px;
+        }
+    
+        img{
+            width:100%;
+            height:300px;
+        }
+    }
+    
+    .info{
+        position:fixed;
+        display:none;
+        right:0;
+        left:0;
+        width:100%;
+        height:100%;
+        top:0;
+        padding:20px;
+        text-align: center;
+        overflow:auto;
+        scroll-behavior: smooth;
+        scrollbar-width:none;
+        z-index:100;
+       background:darkcyan;
+    
+       *{
+           margin:10px;
+       }
+    
+        button{
+            position:absolute;
+            top:0;
+            right:0;
+            margin:auto;
+            background:deepskyblue;
+            color:white;
+            border:none;
+            padding:10px 20px;
+        }
+    
+        img{
+            width:300px;
+            height:300px;
+        }
+    }
+    
+    .info.show{
+        display:block;
+    }
+    
+    .date{
+        display:flex;
+        justify-content: center;
+        margin:auto;
+    
+        *{
+    margin:auto 10px;
+        }
+    }
+    .movie-list{
+        background:darkcyan;
         top:0;
         right:0;
-        background:deepskyblue;
-        border:none;
-        padding:10px 20px;
-        color:white;
-        z-index:100;
-    }
-
-.date{
-        display: flex;
-        justify-content: space-between;
+        left:0;
         width:100%;
+        height:100%;
+        z-index:1;
+        overflow:auto;
+        position:fixed;
+        visibility: hidden;
+        display:flex;
         justify-content: center;
-    *{
-        margin:10px;
+        text-align: center;
+        padding:20px;
+        scroll-behavior:smooth;
+        scrollbar-width:none;
+        
+        button{
+            position: absolute;
+            top:0;
+            right:0;
+            background:deepskyblue;
+            border:none;
+            padding:10px 20px;
+            color:white;
+        }
+    
+    .date{
+            display: flex;
+            justify-content: space-between;
+            width:100%;
+            justify-content: center;
+        *{
+            margin:10px;
+        }
+        }
     }
+    .rating{
+        display:flex;
+        justify-content: space-between;
     }
-}
-.rating{
-    display:flex;
-    justify-content: space-between;
-}
-.orange{
-    color:orange;
-}
-.green{
-    color:green;
-}
-.red{
-    color:red;
-}
-
+    .orange{
+        color:orange;
+    }
+    .green{
+        color:green;
+    }
+    .red{
+        color:red;
+    }
+    
+    #tags{
+        display:flex;
+    }
+    .tag.highlight{
+    background:coral;
+    }
+    .tag{
+        background:deepskyblue;
+        width:100%;
+        border:none;
+        color:white;
+        padding:5px 0;
+    }
 @include for-size(tablet){
-  .animeshowlist,.genreselector{
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
+    .container2,.genre{
+        grid-template-columns: auto auto auto;
+    }
 .movie-list{
     display: grid;
     grid-template-columns: auto auto auto;
 }
-.info{
-    img{
-        height:500px;
-    }
 }
 .footerflex{
     font-size: 20px;
@@ -324,7 +380,6 @@ input{
     .h2{
         font-size: 20px;
     }
-}
 
 }
 
@@ -391,7 +446,7 @@ input{
             font-size: 30px !important;
         }
     }
-   #result{
-    grid-template-columns: auto auto auto auto auto;
-}
+    .container2,.genre{
+        grid-template-columns: auto auto auto auto;
+    }
 }

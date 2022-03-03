@@ -309,7 +309,7 @@ input {
   border: none;
 }
 
-.animeshowlist {
+.container2, .genre {
   display: -ms-grid;
   display: grid;
   grid-gap: 10px;
@@ -317,18 +317,69 @@ input {
   text-align: center;
 }
 
-.animeshowlist div {
+.container2 .movieEl, .container2 .card, .genre .movieEl, .genre .card {
   background: whitesmoke;
   padding: 10px;
 }
 
-.animeshowlist img {
+.container2 img, .genre img {
   width: 100%;
   height: 300px;
 }
 
 .info {
+  position: fixed;
   display: none;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 20px;
+  text-align: center;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  z-index: 100;
+  background: darkcyan;
+}
+
+.info * {
+  margin: 10px;
+}
+
+.info button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: auto;
+  background: deepskyblue;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
+
+.info img {
+  width: 300px;
+  height: 300px;
+}
+
+.info.show {
+  display: block;
+}
+
+.date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+}
+
+.date * {
+  margin: auto 10px;
 }
 
 .movie-list {
@@ -338,7 +389,7 @@ input {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 100;
+  z-index: 1;
   overflow: auto;
   position: fixed;
   visibility: hidden;
@@ -354,7 +405,7 @@ input {
   scrollbar-width: none;
 }
 
-.movie-list .close-btn, .movie-list .closebtn {
+.movie-list button {
   position: absolute;
   top: 0;
   right: 0;
@@ -362,7 +413,6 @@ input {
   border: none;
   padding: 10px 20px;
   color: white;
-  z-index: 100;
 }
 
 .movie-list .date {
@@ -403,10 +453,26 @@ input {
   color: red;
 }
 
+#tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tag.highlight {
+  background: coral;
+}
+
+.tag {
+  background: deepskyblue;
+  width: 100%;
+  border: none;
+  color: white;
+  padding: 5px 0;
+}
+
 @media (min-width: 720px) {
-  .animeshowlist, .genreselector {
-    display: -ms-grid;
-    display: grid;
+  .container2, .genre {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
   }
@@ -416,18 +482,17 @@ input {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
   }
-  .info img {
-    height: 500px;
-  }
-  .footerflex {
-    font-size: 20px;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .footerflex .h2 {
-    font-size: 20px;
-  }
+}
+
+.footerflex {
+  font-size: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footerflex .h2 {
+  font-size: 20px;
 }
 
 @media (min-width: 1020px) {
@@ -502,9 +567,9 @@ input {
   .social i {
     font-size: 30px !important;
   }
-  #result {
-    -ms-grid-columns: auto auto auto auto auto;
-        grid-template-columns: auto auto auto auto auto;
+  .container2, .genre {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
   }
 }
 /*# sourceMappingURL=style.css.map */
