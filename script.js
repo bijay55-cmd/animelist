@@ -403,7 +403,7 @@ function newanime(url){
             
             btn.addEventListener('click', function(){
     
-        question.querySelector('.info').classList.add('show');
+        question.querySelector('.info').classList.toggle('show');
         document.querySelector('nav').style.visibility="hidden";
 
         var closebtn = question.querySelector('.closebtn')
