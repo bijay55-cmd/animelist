@@ -319,6 +319,15 @@ input {
 .container2 .movieEl, .container2 .card, .genre .movieEl, .genre .card {
   background: whitesmoke;
   padding: 10px;
+  position: relative;
+}
+
+.container2 .movieEl button, .container2 .card button, .genre .movieEl button, .genre .card button {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 5px;
+  border: none;
 }
 
 .container2 img, .genre img {
@@ -404,7 +413,7 @@ input {
   scrollbar-width: none;
 }
 
-.movie-list button {
+.movie-list .close-btn {
   position: absolute;
   top: 0;
   right: 0;
@@ -470,6 +479,39 @@ input {
   padding: 5px 0;
 }
 
+.savelist {
+  display: none;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  grid-gap: 10px;
+}
+
+.favinfo {
+  position: fixed;
+  display: none;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 20px;
+  text-align: center;
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  z-index: 100;
+  background: darkcyan;
+}
+
+.favinfo button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  background: deepskyblue;
+  border: none;
+}
+
 @media (min-width: 720px) {
   .container2, .genre {
     -ms-grid-columns: auto auto auto;
@@ -481,17 +523,19 @@ input {
     -ms-grid-columns: auto auto auto;
         grid-template-columns: auto auto auto;
   }
-}
-
-.footerflex {
-  font-size: 20px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.footerflex .h2 {
-  font-size: 20px;
+  .footerflex {
+    font-size: 20px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .footerflex .h2 {
+    font-size: 20px;
+  }
+  .savelist {
+    -ms-grid-columns: auto auto auto;
+        grid-template-columns: auto auto auto;
+  }
 }
 
 @media (min-width: 1020px) {

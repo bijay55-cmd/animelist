@@ -241,6 +241,15 @@ a{
         .movieEl,.card{
             background:whitesmoke;
             padding:10px;
+            position:relative;
+
+            button{
+                position:absolute;
+                top:0;
+                right:10px;
+                padding:5px;
+                border:none;
+            }
         }
     
         img{
@@ -317,7 +326,7 @@ a{
         scroll-behavior:smooth;
         scrollbar-width:none;
         
-        button{
+        .close-btn{
             position: absolute;
             top:0;
             right:0;
@@ -364,6 +373,38 @@ a{
         color:white;
         padding:5px 0;
     }
+    // anime savelist
+    .savelist{
+        display:none;
+        grid-template-columns: auto;
+        grid-gap:10px;
+    }
+    // saveinfo from anime 
+    .favinfo{
+        position:fixed;
+        display:none;
+        right:0;
+        left:0;
+        width:100%;
+        height:100%;
+        top:0;
+        padding:20px;
+        text-align: center;
+        overflow:auto;
+        scroll-behavior: smooth;
+        scrollbar-width:none;
+        z-index:100;
+       background:darkcyan;
+
+       button{
+           position: absolute;
+           top:0;
+           right:0;
+           padding:5px 10px;
+           background:deepskyblue;
+           border:none;
+       }
+    }
 @include for-size(tablet){
     .container2,.genre{
         grid-template-columns: auto auto auto;
@@ -372,12 +413,16 @@ a{
     display: grid;
     grid-template-columns: auto auto auto;
 }
-}
 .footerflex{
     font-size: 20px;
     justify-content: space-between;
     .h2{
         font-size: 20px;
+    }
+
+}
+    .savelist{
+        grid-template-columns: auto auto auto;
     }
 
 }

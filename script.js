@@ -204,6 +204,7 @@ form.addEventListener('submit', (e) => {
         getMovies(searchurl+searchTerm)
         document.body.style.background="coral";
         document.querySelector('.genre').style.display="none";
+        document.querySelector('.savelist').style.display="none";
         document.querySelector('.container2').style.display="grid";
 
         selectedGenre=[];
@@ -224,6 +225,7 @@ form.addEventListener('submit', (e) => {
         selectedGenre=[];
         
         document.querySelector('.genre').style.display="none";
+        document.querySelector('.savelist').style.display="none";
         document.querySelector('.container2').style.display="grid";
 
         const tags = document.querySelectorAll('.tag');
@@ -258,16 +260,18 @@ function showMovies(data){
     data.forEach((data) => {
 
         const movieEl = document.createElement('div');
+
         movieEl.classList.add('movieEl')
         
         movieEl.innerHTML = `
         <img src="${data.images.jpg.image_url}">
-        <p>${data.title}</p>
-
+        <p >${data.title}</p>
         <div class="rating">
         <p>Rating</p>
         <p class="${getColor(data.score)}">${data.score}</p>
         </div>
+
+        
         `
         
         container2.appendChild(movieEl);
@@ -301,6 +305,86 @@ function moviedate(date){
     }
 }
 
+function fav(){
+    document.querySelector('.savelist').style.display="grid";
+    document.querySelector('.container2').style.display="none";
+}
+
+function save(){
+    var title = document.getElementsByClassName('animetitle').innerText = document.querySelector('.titleanime').innerText;
+    var animeImg = document.getElementsByClassName('animeImg').src = document.querySelector('.Imganime').src;
+    addAnimeInfo(title,animeImg);
+}
+
+function addAnimeInfo(title,animeImg){
+    var anime = document.createElement('div')
+    var animelist = document.getElementsByClassName('savelist')[0];
+
+    var animeName = animelist.getElementsByClassName('animetitle');
+for(var i=0; i<animeName.length; i++){
+  if(animeName[i].innerText == title){
+    return 
+  }
+}
+
+var animeContent = `
+<div class="text-center card w-100 p-2 mt-2">
+<p class="animetitle">${title}</p>
+<img onclick="animecard()" class="animeImg" style="height:300px;" src="${animeImg}">
+</div>
+`
+
+anime.innerHTML = animeContent;
+animelist.append(anime);
+
+}
+
+function animecard(){
+    var description = document.getElementsByClassName('descriptionanime').innerHTML = document.querySelector('.animedescription').innerHTML;
+    var date = document.getElementsByClassName('dateanime').innerHTML= document.querySelector('.date').innerHTML;
+    var animetype = document.getElementsByClassName('typeanime').innerText = document.querySelector('.animetype').innerText;
+    var animeepisodes = document.getElementsByClassName('episodesanime').innerText = document.querySelector('.animeepisodes').innerText;
+    var iframe = document.getElementsByClassName('animeiframe').src = document.querySelector('.iframe').src;
+    addSaveAnime(description,date,animetype,animeepisodes,iframe)
+    document.querySelector('.favinfo').style.display="block";
+    document.querySelector('nav').style.visibility="hidden";
+}
+
+function addSaveAnime(description,date,animetype,animeepisodes,iframe){
+    var anime = document.createElement('div')
+    var animelist = document.getElementsByClassName('favinfo')[0];
+
+    var animeName = animelist.getElementsByClassName('descriptionanime');
+for(var i=0; i<animeName.length; i++){
+  if(animeName[i].innerText == description){
+    return 
+  }
+}
+
+var animeContent = `
+
+<p class="descriptionanime">${description}</p>
+<div class="date">${date}</div>
+<p class="typeanime">Type: ${animetype}</p>
+<p class="episodesanime">Episodes: ${animeepisodes}</p>
+<iframe class="animeiframe" width="100%" height="400" src="${iframe}"></iframe>
+
+<button class="closeanime">X</button>
+`
+
+anime.innerHTML = animeContent;
+animelist.append(anime);
+
+
+var closeanime = document.querySelector('.closeanime')
+
+closeanime.addEventListener('click', () => {
+    document.querySelector('.favinfo').style.display="none";
+})
+}
+
+
+
 
 var movielist = document.querySelector('.movie-list')
 
@@ -312,16 +396,18 @@ function showMovieInfo(data){
 
     movieEl.innerHTML = `
     
-    <img src="${data.images.jpg.image_url}">
-    <p>${data.title}</p>
-    <p>${data.synopsis}</p>
+    <img class="Imganime" src="${data.images.jpg.image_url}">
+
+    <p  class="titleanime">${data.title}</p>
+    <p class="animedescription">${data.synopsis}</p>
     <div class="date">
-<p>Start Date: ${moviedate(data.aired.from)}</p>
-<p>End Date: ${moviedate(data.aired.to)}</p>
-</div>
-<p>Type: ${data.type}</p>
-<p>Full Episodes: ${data.episodes}</p>
-    <iframe width="100%" height="400" src="https://www.youtube.com/embed/${data.trailer.youtube_id}"></iframe>
+    <p>Start Date: ${moviedate(data.aired.from)}</p>
+    <p>End Date: ${moviedate(data.aired.to)}</p>
+    </div>
+    <p class="animetype">Type: ${data.type}</p>
+    <p class="animeepisodes">Full Episodes: ${data.episodes}</p>
+<button onclick="save()">Save</button>
+    <iframe class="iframe" width="100%" height="400" src="https://www.youtube.com/embed/${data.trailer.youtube_id}"></iframe>
     
     
     <button class="close-btn">X</button>
@@ -344,6 +430,7 @@ function showMovieInfo(data){
     })
 
 }
+
 
 var genrecode = 'https://api.jikan.moe/v3/search/anime?q=&genre=';
 
