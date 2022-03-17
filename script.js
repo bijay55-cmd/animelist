@@ -342,8 +342,8 @@ animelist.append(anime);
 function animecard(){
     var description = document.getElementsByClassName('descriptionanime').innerHTML = document.querySelector('.animedescription').innerHTML;
     var date = document.getElementsByClassName('dateanime').innerHTML= document.querySelector('.date').innerHTML;
-    var animetype = document.getElementsByClassName('typeanime').innerText = document.querySelector('.animetype').innerText;
-    var animeepisodes = document.getElementsByClassName('episodesanime').innerText = document.querySelector('.animeepisodes').innerText;
+    var animetype = document.getElementsByClassName('typeanime').innerHTML = document.querySelector('.animetype').innerHTML;
+    var animeepisodes = document.getElementsByClassName('episodesanime').innerHTML = document.querySelector('.animeepisodes').innerHTML;
     var iframe = document.getElementsByClassName('animeiframe').src = document.querySelector('.iframe').src;
     addSaveAnime(description,date,animetype,animeepisodes,iframe)
     document.querySelector('.favinfo').style.display="block";
