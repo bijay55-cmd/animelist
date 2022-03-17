@@ -204,7 +204,7 @@ form.addEventListener('submit', (e) => {
         getMovies(searchurl+searchTerm)
         document.body.style.background="coral";
         document.querySelector('.genre').style.display="none";
-        document.querySelector('.savelist').style.display="none";
+        
         document.querySelector('.container2').style.display="grid";
 
         selectedGenre=[];
@@ -225,7 +225,7 @@ form.addEventListener('submit', (e) => {
         selectedGenre=[];
         
         document.querySelector('.genre').style.display="none";
-        document.querySelector('.savelist').style.display="none";
+       
         document.querySelector('.container2').style.display="grid";
 
         const tags = document.querySelectorAll('.tag');
