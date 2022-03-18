@@ -326,7 +326,6 @@ function showMovieInfo(data){
     </div>
     <p class="animetype">Type: ${data.type}</p>
     <p class="animeepisodes">Full Episodes: ${data.episodes}</p>
-<button onclick="save()">Save</button>
     <iframe class="iframe" width="100%" height="400" src="https://www.youtube.com/embed/${data.trailer.youtube_id}"></iframe>
     
     
