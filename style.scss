@@ -325,7 +325,7 @@ a{
         padding:20px;
         scroll-behavior:smooth;
         scrollbar-width:none;
-        
+
         .close-btn{
             position: absolute;
             top:0;
@@ -374,37 +374,61 @@ a{
         padding:5px 0;
     }
     // anime savelist
-    .savelist{
-        display:none;
-        grid-template-columns: auto;
-        grid-gap:10px;
-    }
-    // saveinfo from anime 
-    .favinfo{
-        position:fixed;
-        display:none;
-        right:0;
-        left:0;
-        width:100%;
-        height:100%;
-        top:0;
-        padding:20px;
-        text-align: center;
-        overflow:auto;
-        scroll-behavior: smooth;
-        scrollbar-width:none;
-        z-index:100;
-       background:darkcyan;
+   .favlist{
+       overflow-x:auto;
+       display:flex;
+       gap:10px;
+       justify-content: center;
 
-       button{
-           position: absolute;
-           top:0;
-           right:0;
-           padding:5px 10px;
-           background:deepskyblue;
-           border:none;
+       img{
+           width:300px;
+           height:300px;
        }
+
+       div{
+        background:whitesmoke;
+        padding:10px;
     }
+   }
+
+   .otherframe{
+       display:none;
+   }
+//    count
+.count{
+    display:none;
+}
+
+.animefav{
+    display:none;
+}
+.favinfo{
+    background:darkcyan;
+    top:0;
+    right:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:1;
+    overflow:auto;
+    position:fixed;
+    display:none;
+    justify-content: center;
+    text-align: center;
+    padding:20px;
+    scroll-behavior:smooth;
+    scrollbar-width:none;
+
+    button{
+        position:absolute;
+        top:0;
+        right:0;
+        border:none;
+        background:deepskyblue;
+        padding:5px 10px;
+    }
+}
+ 
 @include for-size(tablet){
     .container2,.genre{
         grid-template-columns: auto auto auto;
@@ -472,6 +496,17 @@ a{
     .infoimg{
         width:30%;
         height:50%;
+    }
+
+    .favlist {
+
+        img{
+            width:100%;
+        }
+        div{
+            width:300px;
+        }
+
     }
 }
 

@@ -479,37 +479,66 @@ input {
   padding: 5px 0;
 }
 
-.savelist {
+.favlist {
+  overflow-x: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.favlist img {
+  width: 300px;
+  height: 300px;
+}
+
+.favlist div {
+  background: whitesmoke;
+  padding: 10px;
+}
+
+.otherframe {
   display: none;
-  -ms-grid-columns: auto;
-      grid-template-columns: auto;
-  grid-gap: 10px;
+}
+
+.count {
+  display: none;
+}
+
+.animefav {
+  display: none;
 }
 
 .favinfo {
-  position: fixed;
-  display: none;
+  background: darkcyan;
+  top: 0;
   right: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  top: 0;
-  padding: 20px;
-  text-align: center;
+  z-index: 1;
   overflow: auto;
+  position: fixed;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  padding: 20px;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  z-index: 100;
-  background: darkcyan;
 }
 
 .favinfo button {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 5px 10px;
-  background: deepskyblue;
   border: none;
+  background: deepskyblue;
+  padding: 5px 10px;
 }
 
 @media (min-width: 720px) {
@@ -597,6 +626,12 @@ input {
   .infoimg {
     width: 30%;
     height: 50%;
+  }
+  .favlist img {
+    width: 100%;
+  }
+  .favlist div {
+    width: 300px;
   }
 }
 

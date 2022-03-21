@@ -256,12 +256,11 @@ function showMovies(data){
 
     container2.innerHTML = "";
 
-
     data.forEach((data) => {
 
         const movieEl = document.createElement('div');
-
-        movieEl.classList.add('movieEl')
+        
+        movieEl.classList.add('movieEl');
         
         movieEl.innerHTML = `
         <img src="${data.images.jpg.image_url}">
@@ -270,12 +269,13 @@ function showMovies(data){
         <p>Rating</p>
         <p class="${getColor(data.score)}">${data.score}</p>
         </div>
-
-        
         `
-        
-        container2.appendChild(movieEl);
-        
+
+   
+       
+        container2.append(movieEl)
+  
+
         movieEl.addEventListener('click', () => {
             showMovieInfo(data)
             document.querySelector('nav').style.visibility="hidden";
@@ -305,7 +305,6 @@ function moviedate(date){
     }
 }
 
-
 var movielist = document.querySelector('.movie-list')
 
 function showMovieInfo(data){
@@ -316,24 +315,106 @@ function showMovieInfo(data){
 
     movieEl.innerHTML = `
     
-    <img class="Imganime" src="${data.images.jpg.image_url}">
-
-    <p  class="titleanime">${data.title}</p>
-    <p class="animedescription">${data.synopsis}</p>
-    <div class="date">
+    <img class="animeimg" src="${data.images.jpg.image_url}">
+    <p class="animetitle">${data.title}</p>
+    <button class="bookmark">Save</button>
+    <p class="animesynopsis">${data.synopsis}</p>
+    <div class="animedate">
     <p>Start Date: ${moviedate(data.aired.from)}</p>
     <p>End Date: ${moviedate(data.aired.to)}</p>
     </div>
     <p class="animetype">Type: ${data.type}</p>
     <p class="animeepisodes">Full Episodes: ${data.episodes}</p>
-    <iframe class="iframe" width="100%" height="400" src="https://www.youtube.com/embed/${data.trailer.youtube_id}"></iframe>
+    <iframe class="animeiframe"  width="100%" height="400" src="https://www.youtube.com/embed/${data.trailer.youtube_id}"></iframe>
     
     
     <button class="close-btn">X</button>
     
     `
 
+   
     movielist.appendChild(movieEl);
+
+  
+    var cartbtn = document.getElementsByClassName('bookmark')
+    for(var i=0; i<cartbtn.length; i++){
+       var button = cartbtn[i];
+       button.addEventListener('click', addToCartClicked)
+    }
+
+    function addToCartClicked(event){
+        var button = event.target;
+        var shopItem = button.parentElement;
+        var title = shopItem.getElementsByClassName('animetitle')[0].innerText;
+        var imageSrc = shopItem.getElementsByClassName('animeimg')[0].src;
+        var iframe = shopItem.getElementsByClassName('animeiframe')[0].src;
+        var synopsis = shopItem.getElementsByClassName('animesynopsis')[0].innerHTML;
+        var type = shopItem.getElementsByClassName('animetype')[0].innerText;
+        var episodes = shopItem.getElementsByClassName('animeepisodes')[0].innerHTML;
+        var date = shopItem.getElementsByClassName('animedate')[0].innerHTML;
+        addItemToCart(title,imageSrc,iframe,synopsis,date,type,episodes);
+        document.querySelector('.fav').style.display="block";
+        document.querySelector('.animefav').style.display="block";
+     }
+
+     function addItemToCart(title,imageSrc,iframe,synopsis,date,type,episodes){
+
+
+        var animerow = document.createElement('div')
+      
+        animerow.innerText =title;
+
+        var animeitems = document.getElementsByClassName('favlist')[0]
+
+        var animeItemNames = animeitems.getElementsByClassName('carttitle');
+
+        for(var i=0; i<animeItemNames.length; i++){
+           if(animeItemNames[i].innerText == title){
+              alert('You have already added this anime list')
+              return 
+           }
+        }
+
+        var animeRowContents =  `
+        
+        <img class="animefavimg" src="${imageSrc}"/>
+        <p class="carttitle">${title}</p>
+        <br>
+        <button class="remove">Unsave</button>
+        `
+        
+        animerow.innerHTML = animeRowContents;
+        animeitems.append(animerow)
+
+
+      var animeclick = animerow.querySelector('.animefavimg')
+      animeclick.addEventListener('click', () => {
+          saveanimeinfo(title,imageSrc,iframe,synopsis,date,type,episodes);
+          document.querySelector('.favinfo').style.display="block";
+          document.querySelector('nav').style.visibility="hidden";
+        })
+
+     
+
+        animerow.getElementsByClassName('remove')[0].addEventListener('click', removeCartItem);
+
+    }
+    var removecart = document.getElementsByClassName('remove');
+    for(var i=0; i< removecart.length; i++){
+       var button = removecart[i];
+       button.addEventListener('click', removeCartItem);
+    }
+
+    //removing item on click
+    function removeCartItem(event){
+       var buttonClicked = event.target;
+       buttonClicked.parentElement.remove();
+if(document.querySelector('.favlist').innerHTML === ""){
+    document.querySelector('.fav').style.display="none";
+}
+    }
+     
+     
 
     var closeBtn = document.querySelector('.close-btn');
 
@@ -347,6 +428,45 @@ function showMovieInfo(data){
             }
         }
     })
+
+}
+
+
+var favinfo = document.querySelector('.favinfo')
+
+function saveanimeinfo(title,imageSrc,iframe,synopsis,date,episodes,type){
+
+favinfo.innerHTML = "";
+
+var movieEl = document.createElement('div')
+
+movieEl.innerHTML = `
+
+<img src="${imageSrc}"/>
+<p>${title}</p>
+<p class="synopsis">${synopsis}</p>
+<div class="date">${date}</div>
+<p>${type}</p>
+<p>${episodes}</p>
+<iframe width="100%" height="400" src="${iframe}"></iframe>
+<button class="favclose">X</button>
+
+`
+
+favinfo.append(movieEl)
+
+var favclose = document.querySelector('.favclose')
+
+favclose.addEventListener('click', () => {
+document.querySelector('.favinfo').style.display="none";
+document.querySelector('nav').style.visibility="visible";
+const iframes = document.getElementsByTagName('iframe');
+if(iframes !== null){
+    for(let i=0; i<iframes.length; i++){
+        iframes[i].src = iframes[i].src;
+    }
+}
+})
 
 }
 
